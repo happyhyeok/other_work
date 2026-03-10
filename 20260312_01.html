@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 AI 보조강사 실무 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        body { font-family: 'Pretendard', sans-serif; color: #333333; background-color: #ffffff; line-height: 1.6; }
+        * { font-style: normal !important; }
+        pre { white-space: pre-wrap; word-break: keep-all; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fafafa; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+        .doc-section { border-bottom: 1px solid #e5e7eb; padding-bottom: 3rem; margin-bottom: 3rem; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-gray-200">
+
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🤖</span>
+                <h1 class="text-2xl font-bold text-gray-900 tracking-tight">AI 보조강사 실무 가이드</h1>
+            </div>
+            <div class="text-base text-gray-500">2026 Updated Version</div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-10 py-10 relative">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-64 shrink-0 hidden md:block">
+            <nav class="sticky top-24 space-y-1">
+                <p class="text-sm font-bold text-gray-400 mb-4 tracking-wider uppercase">목차</p>
+                <a href="#intro" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">도입: 2026 AI 트렌드</a>
+                <a href="#toolbox" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 1. 필수 AI 도구</a>
+                <a href="#prompt-lab" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 2. 프롬프트 연구소</a>
+                <div class="pl-4 border-l border-gray-200 ml-3 my-1 space-y-1">
+                    <a href="#prompt-summary" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">어려운 정보 요약</a>
+                    <a href="#prompt-strategy" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">수업 전략 도출</a>
+                    <a href="#prompt-tone" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">말투/톤 변경</a>
+                    <a href="#prompt-promo" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">홍보 문구 작성</a>
+                </div>
+                <a href="#creative" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 3. 멀티모달 창작</a>
+                <div class="pl-4 border-l border-gray-200 ml-3 my-1 space-y-1">
+                    <a href="#creative-grok" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">영상 제작 (Grok 4)</a>
+                    <a href="#creative-banana" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">비주얼 (나노 바나나 2)</a>
+                    <a href="#creative-udio" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">음악 제작 (Udio)</a>
+                </div>
+                <a href="#advanced" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 4. 심화 학습 (내 데이터)</a>
+                <a href="#checklist" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">최종 체크리스트</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-full max-w-4xl">
+            
+            <section id="intro" class="doc-section pt-0">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">기획부터 강의 영상까지, AI 비서에게 맡기세요</h2>
+                <p class="text-lg text-gray-600 mb-8">2026년 3월 현재, AI는 이제 단순한 텍스트 대화 도구를 넘어 보고, 듣고, 편집하는 멀티모달 파트너입니다.</p>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-6">
+                    <h3 class="text-xl font-bold mb-2">💡 용어 해설: 멀티모달 (Multimodal)</h3>
+                    <p class="text-base text-gray-600">글자뿐만 아니라 이미지, 소리, 영상, 데이터 파일 등 다양한 정보를 동시에 처리하고 생성하는 기술입니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="border border-gray-200 p-5 rounded-lg">
+                        <div class="text-3xl mb-2">👀</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">눈 (분석/이해)</h4>
+                        <p class="text-base text-gray-600">PDF, HWP, 사진 속 텍스트를 즉시 읽어내고 팩트 위주로 요약합니다.</p>
+                    </div>
+                    <div class="border border-gray-200 p-5 rounded-lg">
+                        <div class="text-3xl mb-2">🎬</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">수행 (제작/실행)</h4>
+                        <p class="text-base text-gray-600">홍보 영상 제작부터 자막 완성, 문서 교정까지 잡무를 대행합니다.</p>
+                    </div>
+                    <div class="border border-gray-200 p-5 rounded-lg">
+                        <div class="text-3xl mb-2">👂</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">귀 (청각/음성)</h4>
+                        <p class="text-base text-gray-600">수업 테마에 맞는 배경음악을 작곡하고, 오디오로 읽어줍니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="toolbox" class="doc-section">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 1. 필수 AI 도구 기본 세트</h2>
+                <p class="text-base text-gray-500 mb-6">결제 없이도 충분히 스마트한 강의 준비가 가능합니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">Gemini</h3>
+                            <a href="https://gemini.google.com/" target="_blank" class="text-base text-blue-600 hover:underline">사이트 이동 ↗</a>
+                        </div>
+                        <ul class="text-base text-gray-600 space-y-2 mb-4 list-disc pl-5">
+                            <li>실시간 뉴스 정보 및 유튜브 연동</li>
+                            <li>대용량 PDF 및 링크 문서 무제한 분석</li>
+                            <li>빠르고 무료로 사용 가능 (Gemini Flash)</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold">ChatGPT</h3>
+                            <a href="https://chatgpt.com/" target="_blank" class="text-base text-blue-600 hover:underline">사이트 이동 ↗</a>
+                        </div>
+                        <ul class="text-base text-gray-600 space-y-2 mb-4 list-disc pl-5">
+                            <li>논리적인 강의 계획서 및 커리큘럼 설계</li>
+                            <li>캔버스 기능으로 별도 도구 없이 문서 직접 수정</li>
+                            <li>강력한 논리력 (GPT-4o mini)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="prompt-lab" class="doc-section">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 2. 프롬프트 연구소</h2>
+                <p class="text-base text-gray-500 mb-8">노란색 박스 [ ] 안에 자신의 상황을 채워 넣어 AI에게 전달하세요.</p>
+
+                <div class="space-y-12">
+                    <!-- 요약 -->
+                    <div id="prompt-summary">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">📄</span>
+                            <h3 class="text-xl font-bold">어려운 정보 요약하기</h3>
+                        </div>
+                        <p class="text-base text-gray-600 mb-3">보도자료나 전문 서적을 수강생 눈높이에 맞춰 변환합니다. (추천: Gemini / ChatGPT)</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative mb-6">
+                            <span class="text-sm font-bold text-gray-500 block mb-2">1. AI에게 내릴 '지시문(프롬프트)' 복사</span>
+                            <button onclick="copyText('text-summary', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
+                            <pre id="text-summary" class="text-base text-gray-800 font-mono mt-2">"당신은[역할: 15년 경력의 베테랑 강사]입니다. 첨부한[파일 종류: 질병관리청 보도자료]를 분석해 주세요. 이 복잡한 내용을[대상: 스마트폰 활용이 서툰 70대 어르신]들도 한눈에 이해할 수 있도록[형식: 큰 글씨의 3줄 요약 주의사항]으로 재구성해 주세요.
+
+⚠️[할루시네이션 방지]
+1. 원문에 없는 효능이나 의학적 사실을[절대 지어내지 마세요].
+2. 복용법이나 수치 같은 정보는[원문의 숫자를 정확히 유지]해 주세요."</pre>
+                        </div>
+                        <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                            <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
+                                <div>
+                                    <span class="text-base font-bold text-blue-600 block mb-1">2. 분석할 '원문 데이터' 복사 (실습용)</span>
+                                    <p class="text-sm text-gray-600 m-0">위의 프롬프트를 복사했다면, 여기를 눌러 원문을 복사해 함께 전송해 보세요.</p>
+                                </div>
+                                <span class="text-blue-500 transform transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-2 border-t border-gray-100 space-y-4">
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[실습 1] 에너지바우처 신청 안내</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="sample-1" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">산업통상자원부는 취약계층의 냉·난방 이용에 필요한 에너지를 구입할 수 있는 이용권(바우처)을 지원하는 '2024년도 에너지바우처' 신청·접수를 5월 29일부터 12월 31일까지 진행한다. 올해 지원대상은 「국민기초생활보장법」 상 기초생활수급가구이면서 특정 세대원 기준(노인, 영유아, 장애인, 임산부, 중증·희귀·중증난치질환자, 한부모가족, 소년소녀가정)을 충족하는 세대이다. 지원 단가는 전년 대비 인상되었으며, 수급자는 전기·도시가스 고지서에서 자동 차감받거나 국민행복카드를 통해 결제할 수 있다. 신청은 주소지 관할 읍·면·동 행정복지센터 방문 또는 복지로 홈페이지를 통해 가능하다.</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[실습 2] 보이스피싱 예방 수칙</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="sample-2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">정부는 연중무휴 24시간 「보이스피싱 통합대응단」을 가동하여 골든타임 대응체계를 구축하였다. 최근 발생하고 있는 주요 수법은 대포폰을 활용한 악성 앱 설치 유도 및 금융기관 사칭 대출 빙자형 사기이다. 이에 대응하기 위해 과기정통부는 문자사업자-이동통신망-개별 단말기에 이르는 강력한 3중 차단 체계를 운영 중이다. 국민들은 출처가 불분명한 URL 링크를 절대 클릭해서는 안 되며, 만약 악성 앱 설치가 의심될 경우 즉시 112 또는 금융감독원(1332)에 신고하여 계좌 지급정지를 요청해야 한다. 또한 '안심차단 서비스'를 통해 본인 모르게 개설된 계좌나 대출을 실시간으로 확인하는 것이 권장된다.</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[실습 3] 독감 및 코로나19 동시 접종</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="sample-3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">질병관리청은 환절기를 맞아 고령층 및 면역저하자 등을 대상으로 하는 2025-2026절기 독감(인플루엔자) 및 코로나19 백신 동시 접종 권고안을 발표하였다. 이번 접종은 65세 이상 연령층에서 두 백신을 동시에 접종하더라도 면역 형성 및 안전성에 문제가 없음을 임상 데이터를 통해 확인하였다. 접종 부위 통증이나 발열 등 경증 이상 반응은 하루 이틀 내에 자연 소멸되나, 고열이나 알레르기 반응이 지속될 경우 의료기관 방문이 필요하다. 접종 당일에는 충분한 휴식을 취하고, 접종 후 20~30분간은 의료기관에 머물며 이상 반응 여부를 관찰해야 한다. 예약은 사전예약 시스템 또는 보건소 전화를 통해 가능하다.</pre>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 전략 -->
+                    <div id="prompt-strategy" class="pt-6 border-t border-gray-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">💡</span>
+                            <h3 class="text-xl font-bold">실전 수업 전략 도출</h3>
+                        </div>
+                        <p class="text-base text-gray-600 mb-3">내일 당장 수업에서 쓸 행동 지침을 받습니다. (추천: Gemini / ChatGPT)</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative mb-6">
+                            <span class="text-sm font-bold text-gray-500 block mb-2">1. 기본 템플릿 복사</span>
+                            <button onclick="copyText('text-strategy', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
+                            <pre id="text-strategy" class="text-base text-gray-800 font-mono mt-2">"나는 [지역: 강릉]에서[대상: 60대 이상 어르신]을 대상으로 [주제: 스마트폰 활용]을 가르치는 강사입니다. 현재[문제 상황: 수강생들이 복습을 안 해서 매주 같은 내용을 반복함]을 겪고 있습니다.
+
+이를 해결하기 위한 [3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 예산은 0원이며, 강사가 수업 중에 즉석에서 할 수 있는 방법]이어야 합니다.
+
+⚠️[중요] 뻔한 조언은 빼고,[내일 수업 5분 전에 바로 적용 가능한 행동 지침] 위주로 알려주세요."</pre>
+                        </div>
+                        <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                            <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
+                                <div>
+                                    <span class="text-base font-bold text-blue-600 block mb-1">2. 해결할 '상황 데이터' 복사 (실습용)</span>
+                                    <p class="text-sm text-gray-600 m-0">아래를 눌러 빈칸이 채워진 상황을 골라 전송해 보세요.</p>
+                                </div>
+                                <span class="text-blue-500 transform transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-2 border-t border-gray-100 space-y-4">
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[상황 1] 기기 파편화 문제 해결</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-s1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
+                                    <pre id="sample-s1" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 서울]에서[대상: 70대 어르신]을 대상으로 [주제: 스마트폰 기초]를 가르치는 강사입니다. 현재[문제 상황: 스마트폰 기종(갤럭시/아이폰)이 제각각이라 한 화면을 설명할 때마다 시간이 3배로 걸림]을 겪고 있습니다. 이를 해결하기 위한 [3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 예산은 0원이며 수업 중에 즉석에서 통제할 수 있는 방법]이어야 합니다."</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[상황 2] 저학년 집중력 저하 대처</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-s2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
+                                    <pre id="sample-s2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 대전]에서[대상: 초등학교 저학년]을 대상으로[주제: 블록 코딩]을 가르치는 강사입니다. 현재[문제 상황: 아이들이 10분만 지나면 집중력을 잃고 장난을 치기 시작함]을 겪고 있습니다. 이를 해결하기 위한[3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 보조강사 없이 나 혼자서 즉각적으로 시선을 집중시키는 방법]이어야 합니다."</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">[상황 3] 복습 부족 수강생 독려</h4>
+                                    </div>
+                                    <button onclick="copyText('sample-s3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
+                                    <pre id="sample-s3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 부산]에서[대상: 4050 재취업 준비생]을 대상으로[주제: 엑셀 실무 자격증]을 가르치는 강사입니다. 현재[문제 상황: 진도는 다 나갔는데 수강생들이 집에 가서 복습을 하지 않아 다음 날이면 단축키를 전부 잊어버림]을 겪고 있습니다. 이를 해결하기 위한 [3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 수강생들에게 부담을 주지 않는 5분 이내의 활동]이어야 합니다."</pre>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 톤앤매너 -->
+                    <div id="prompt-tone" class="pt-6 border-t border-gray-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">🗣️</span>
+                            <h3 class="text-xl font-bold">말투/톤앤매너 변경</h3>
+                        </div>
+                        <p class="text-base text-gray-600 mb-3">내용은 유지하고, 읽는 사람에 맞춰 분위기를 바꿉니다. (추천: ChatGPT Canvas)</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative mb-6">
+                            <span class="text-sm font-bold text-gray-500 block mb-2">1. AI에게 내릴 '지시문' 복사</span>
+                            <button onclick="copyText('text-tone', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
+                            <pre id="text-tone" class="text-base text-gray-800 font-mono mt-2">"이 부분은[대상: 취업 준비생]들이 읽기에 너무[현재 느낌: 딱딱하고 교장 선생님 훈화 말씀] 같습니다. 내용을[원하는 톤: 형/언니가 조언해 주듯 친근하고 힙한 느낌]으로 바꿔주세요.
+
+⚠️[무결성 장치]
+문장의 분위기만 바꾸되, 원문에 포함된[핵심 정보(장소, 시간, 준비물, 규칙)는 절대 변경하거나 누락하지 마세요]."</pre>
+                        </div>
+                        <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
+                            <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
+                                <div>
+                                    <span class="text-base font-bold text-blue-600 block mb-1">2. 바꿀 '원문 데이터' 복사 (실습용)</span>
+                                    <p class="text-sm text-gray-600 m-0">프롬프트를 복사했다면, 딱딱한 원문을 골라 AI에게 전송해 보세요.</p>
+                                </div>
+                                <span class="text-blue-500 transform transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-2 border-t border-gray-100 space-y-4">
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs font-bold bg-red-100 text-red-700 px-2 py-1 rounded-full">현재 느낌: 차갑고 위압적인 공고문</span>
+                                        <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-full">변경 추천: 친절하고 따뜻한 안내문</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">예시 1. 강의실 이용 수칙</h4>
+                                    </div>
+                                    <button onclick="copyText('text-t1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="text-t1" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"본 강의실 내에서는 음식물 섭취가 엄격히 금지됨을 알립니다. 적발 시 퇴실 조치될 수 있습니다. 또한 강의 시작 10분 전까지 입실을 완료해야 하며, 지각 시 출석 점수에서 감점 처리됩니다. 개인 소지품 분실에 대한 책임은 본인에게 있습니다."</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded-full">현재 느낌: 지루한 교과서 말투</span>
+                                        <span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded-full">변경 추천: 듬직한 선배의 꿀팁 톤</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">예시 2. 자소서 작성 팁</h4>
+                                    </div>
+                                    <button onclick="copyText('text-t2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="text-t2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"자기소개서를 작성할 때는 본인의 역량을 객관적인 수치로 증명하는 것이 효과적입니다. 구체적인 사례를 나열하고 결론부터 서술하는 두괄식 구조를 취해야 합니다. 또한 기업의 핵심 가치를 분석하여 본인의 비전과 일치함을 강조하는 과정이 필수적으로 요구됩니다."</pre>
+                                </div>
+                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span class="text-xs font-bold bg-gray-200 text-gray-700 px-2 py-1 rounded-full">현재 느낌: 무미건조한 공문</span>
+                                        <span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded-full">변경 추천: 활기차고 참여하고 싶은 홍보 톤</span>
+                                    </div>
+                                    <div class="flex justify-between items-center mb-2 pr-24">
+                                        <h4 class="font-bold text-gray-800">예시 3. 마을 축제 참여 안내</h4>
+                                    </div>
+                                    <button onclick="copyText('text-t3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
+                                    <pre id="text-t3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"2026년 5월 10일 강릉시청 앞 광장에서 마을 축제를 개최할 예정입니다. 각 세대당 1명 이상의 참여를 권고하며, 참가자에게는 소정의 기념품이 지급될 수 있습니다. 우천 시 행사는 취소되거나 연기될 수 있음을 미리 공지합니다."</pre>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- 홍보 -->
+                    <div id="prompt-promo" class="pt-6 border-t border-gray-200">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-2xl">📢</span>
+                            <h3 class="text-xl font-bold">강좌 홍보 문구 작성</h3>
+                        </div>
+                        <p class="text-base text-gray-600 mb-3">과장 광고 없이 수강생의 마음을 움직이는 세일즈 포인트를 짚어줍니다.</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative">
+                            <button onclick="copyText('text-promo', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
+                            <pre id="text-promo" class="text-base text-gray-800 font-mono mt-2">"[강좌명: 일주일 만에 끝내는 시니어 인스타그램] 수업의 홍보 문구를 작성해 주세요. 타겟은[대상: 손주와 소통하고 싶은 할머니/할아버지]이며,[핵심 소구점: 기술보다는 추억 기록의 즐거움]을 강조해 주세요.
+
+⚠️[팩트 체크]
+허위/과장 문구는[절대 넣지 마세요]. 수강료와 일시는 나중에 내가 직접 적을 수 있게[(빈칸)]으로 비워두세요."</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 멀티모달 창작 스튜디오 -->
+            <section id="creative" class="doc-section">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 3. 멀티모달 창작 스튜디오</h2>
+                <p class="text-base text-gray-500 mb-8">도서관 문화강좌 강사로서 '최소한의 노력으로 최대의 시각/청각 효과'를 낼 수 있는 2026년형 실무 가이드를 제안해 드립니다.</p>
+
+                <div class="space-y-10">
+                    <!-- 영상 제작: Grok 4 -->
+                    <div id="creative-grok">
+                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎬 1. 영상 제작: Grok 4 (그록 4)</h3>
+                        <p class="text-base text-gray-600 mb-4">단순 자막 편집을 넘어, 이미지 한 장만으로 사운드가 포함된 고퀄리티 영상을 생성하는 데 가장 효율적입니다.</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                            <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
+                                <li><strong>홍보용 숏츠:</strong> 강좌 포스터나 관련 이미지를 업로드하고 <strong>'동영상 만들기'</strong> 버튼을 누르면 6초 내외의 시네마틱 홍보 영상이 즉시 생성됩니다.</li>
+                                <li><strong>강의 오프닝:</strong> "조용한 도서관에서 책장이 넘어가는 모습" 같은 프롬프트를 입력해 배경음이 포함된 고화질 오프닝 영상을 1분 안에 완성할 수 있습니다.</li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-sm text-blue-700 font-bold">
+                                ✓ 무료 활용: X(구 트위터) 계정 로그인 시 기본 생성 기능을 무료로 제공합니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 이미지 & 비주얼: 나노 바나나 2 -->
+                    <div id="creative-banana">
+                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎨 2. 이미지 & 비주얼: 나노 바나나 2 (Gemini 3 Flash Image)</h3>
+                        <p class="text-base text-gray-600 mb-4">기존의 복잡한 이미지 생성 도구와 달리, 한국어 명령어를 완벽하게 이해하며 사진 속 텍스트나 인물 디테일(손가락 등)을 가장 정확하게 표현합니다.</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                            <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
+                                <li><strong>맞춤형 삽화:</strong> "70대 어르신이 스마트폰을 보며 환하게 웃는 모습"을 요청하여 교안에 바로 사용 가능한 4K 고해상도 이미지를 생성합니다.</li>
+                                <li><strong>이미지 기반 영상 시연:</strong> 생성된 이미지를 바탕으로 <strong>Veo(Google의 영상 모델)</strong>와 연동해 교육용 시뮬레이션 영상을 제작할 수 있습니다.</li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-sm text-blue-700 font-bold">
+                                ✓ 무료 활용: Gemini 홈페이지에서 '이미지 만들기' 메뉴를 통해 무료로 사용 가능합니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 음악 제작: Udio & 파워디렉터 AI -->
+                    <div id="creative-udio">
+                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎵 3. 음악 제작: Udio (유디오) & 파워디렉터 AI</h3>
+                        <p class="text-base text-gray-600 mb-4">Suno보다 더 선명한 고음질 배경음악(BGM)과 감성적인 질감을 제공합니다.</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                            <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
+                                <li><strong>수업 BGM:</strong> "명상용 로파이 재즈" 등 수업 분위기에 맞는 곡을 프롬프트 입력만으로 생성합니다.</li>
+                                <li><strong>자동 길이 조절:</strong> <strong>파워디렉터 AI</strong>의 음악 생성 기능을 쓰면 영상 길이에 맞춰 배경음악의 시작과 끝을 자동으로 맞춰줍니다.</li>
+                            </ul>
+                            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-sm text-blue-700 font-bold">
+                                ✓ 무료 활용: Udio는 매일 일정량의 무료 크레딧을 제공하며, 파워디렉터는 무료 버전에서도 AI 음악 생성 기능을 지원합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 심화 학습 -->
+            <section id="advanced" class="doc-section">
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 4. 심화 학습 (내 데이터 활용)</h2>
+                <p class="text-base text-gray-500 mb-8">강의의 품격을 높이는 맞춤형 AI 활용법입니다.</p>
+
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold mb-2">🎓 학습 도우미 & 퀴즈</h3>
+                    <p class="text-base text-gray-600 mb-3">수업 직후 수강생 이해도 확인을 위한 OX 퀴즈를 생성합니다.</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
+                        <button onclick="copyText('text-quiz', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
+                        <pre id="text-quiz" class="text-base text-gray-800 font-mono mt-1">"오늘 강의한 내 자료를 바탕으로 수강생들이 반드시 알고 가야 할 핵심 정보를[OX 퀴즈 5개]로 만들어줘. 퀴즈 아래에는 정답과 수강생들이 이해하기 쉬운 간단한 해설도 포함해줘."</pre>
+                    </div>
+                </div>
+
+                <!-- NotebookLM 마스터 (이미지 바탕 개편) -->
+                <div class="mb-10">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">📓 NotebookLM 마스터 (최신 슬라이드 가이드)</h3>
+                        <a href="https://notebooklm.google.com/" target="_blank" class="text-base text-blue-600 hover:underline">바로가기 ↗</a>
+                    </div>
+                    <p class="text-base text-gray-600 mb-4">유튜브 영상, PDF, 웹 링크를 통째로 넣고 <strong>'자동 슬라이드(발표자료)'</strong>까지 생성하는 완벽한 보조 비서입니다.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-blue-50/50 border border-blue-100 rounded-lg p-5">
+                            <h4 class="text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
+                                <span class="text-green-500">✅</span> 주요 업데이트 기능
+                            </h4>
+                            <ul class="list-disc pl-5 text-base text-blue-700 space-y-1">
+                                <li><strong class="font-bold">유튜브 소스 분석:</strong> 영상 링크만 넣으면 대본 추출 및 요약.</li>
+                                <li><strong class="font-bold">슬라이드 자동 생성:</strong> 소스 기반 텍스트+이미지 슬라이드 제작.</li>
+                                <li><strong class="font-bold">스타일 가이드 적용:</strong> 특정 브랜드(카카오톡 등) 스타일 지정 가능.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                            <h4 class="text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
+                                <span class="text-yellow-500">💡</span> 디자인 꿀팁
+                            </h4>
+                            <p class="text-base text-gray-600">Gemini에게 원하는 테마(예: 네이버 블로그 스타일) 이미지를 보여주고, "이 스타일을 NotebookLM 슬라이드 프롬프트로 설명해줘"라고 요청하여 복사하세요.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative mb-4">
+                        <span class="text-base font-bold text-blue-600 block mb-2">[STEP 1] Gemini 스타일 추출 프롬프트</span>
+                        <button onclick="copyText('text-notebook-1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
+                        <pre id="text-notebook-1" class="text-base text-gray-800 font-mono mt-2">"(이미지 첨부 후) 내가 NotebookLM으로 슬라이드를 만들려고 해. 첨부한 이미지의[톤앤매너, 색상 조합, 글꼴 느낌]을 분석해서, NotebookLM '슬라이드 스타일 설명'란에 넣을 수 있는 상세 가이드를 한국어로 작성해줘."</pre>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative">
+                        <span class="text-base font-bold text-green-600 block mb-2">[STEP 2] NotebookLM 슬라이드 생성 설정</span>
+                        <button onclick="copyText('text-notebook-2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
+                        <pre id="text-notebook-2" class="text-base text-gray-800 font-mono mt-2">"첨부된 유튜브 영상과 PDF를 분석해서[강의용 10페이지 슬라이드]를 만들어줘.
+[디자인 스타일]: (여기에 위에서 추출한 가이드 붙여넣기)
+[구성]: 핵심 개념 설명 60%, 실습 안내 20%, Q&A 20%"</pre>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-2">📑 퍼스널 브랜딩 & 포트폴리오</h3>
+                    <p class="text-base text-gray-600 mb-3">기존 강의 이력이나 메모를 업로드하여 전문적인 프로필 초안을 작성합니다.</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
+                        <button onclick="copyText('text-portfolio', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
+                        <pre id="text-portfolio" class="text-base text-gray-800 font-mono mt-1">"당신은[역할: 20년 경력의 베테랑 강사 브랜딩 전문가]입니다. 내가 올린 강의 활동 자료를 분석하고, 새로운 문화센터 지원을 위한[전문 프로필 초안]을 작성해주세요. 키워드는 '실습 중심의 강의'와 '풍부한 수강생 소통'입니다."</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 최종 체크리스트 -->
+            <section id="checklist" class="pt-2 pb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">최종 체크리스트</h2>
+                <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg">
+                    <ul class="space-y-4 text-lg text-gray-800">
+                        <li class="flex items-start gap-3">
+                            <span class="font-bold text-gray-500 shrink-0">[STEP 1]</span>
+                            <span>스마트폰에 <strong>Gemini</strong>와 <strong>ChatGPT</strong> 앱 설치 완료하기</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="font-bold text-gray-500 shrink-0">[STEP 2]</span>
+                            <span>배운 프롬프트로 <strong>'수업 오프닝 배경음악'</strong> 1곡 작곡해보기</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="font-bold text-gray-500 shrink-0">[STEP 3]</span>
+                            <span>작곡한 곡을 <strong>Grok 4</strong>에 넣어 '시네마틱 홍보 영상' 만들어보기</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 스크립트 (복사 기능) -->
+    <script>
+        function copyText(elementId, btnElement) {
+            const text = document.getElementById(elementId).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                const originalText = btnElement.innerText;
+                btnElement.innerText = '복사 완료!';
+                btnElement.classList.add('bg-blue-100', 'text-blue-700', 'border-blue-300');
+                btnElement.classList.remove('bg-white', 'hover:bg-gray-100');
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.classList.remove('bg-blue-100', 'text-blue-700', 'border-blue-300');
+                    btnElement.classList.add('bg-white', 'hover:bg-gray-100');
+                }, 2000);
+            } catch (err) { console.error('복사 실패', err); }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
