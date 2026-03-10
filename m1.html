@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 실습용 원문 데이터 세트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            color: #333333;
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .practice-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            transition: all 0.2s;
+        }
+        .practice-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-10">
+
+    <div class="max-w-4xl mx-auto">
+        <!-- 헤더 -->
+        <header class="mb-10 text-center">
+            <span class="inline-block bg-blue-100 text-blue-700 text-sm font-bold px-3 py-1 rounded-full mb-3">Part 2. 어려운 정보 요약하기</span>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">실습용 원문 데이터 세트</h1>
+            <p class="text-gray-600">아래의 원문 데이터를 복사하여 AI(Gemini, ChatGPT)에게 요약을 요청해 보세요.</p>
+        </header>
+
+        <div class="space-y-8">
+            <!-- 실습 1 -->
+            <div class="practice-card p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">[실습 1] 정부 복지 혜택</h2>
+                        <p class="text-sm text-blue-600 font-medium">에너지바우처 신청 안내</p>
+                    </div>
+                    <button onclick="copyText('text-p1', this)" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">복사하기</button>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
+                    <pre id="text-p1" class="text-gray-700 text-base leading-relaxed">산업통상자원부는 취약계층의 냉·난방 이용에 필요한 에너지를 구입할 수 있는 이용권(바우처)을 지원하는 '2024년도 에너지바우처' 신청·접수를 5월 29일부터 12월 31일까지 진행한다. 올해 지원대상은 「국민기초생활보장법」 상 기초생활수급가구이면서 특정 세대원 기준(노인, 영유아, 장애인, 임산부, 중증·희귀·중증난치질환자, 한부모가족, 소년소녀가정)을 충족하는 세대이다. 지원 단가는 전년 대비 인상되었으며, 수급자는 전기·도시가스 고지서에서 자동 차감받거나 국민행복카드를 통해 결제할 수 있다. 신청은 주소지 관할 읍·면·동 행정복지센터 방문 또는 복지로 홈페이지를 통해 가능하다.</pre>
+                </div>
+            </div>
+
+            <!-- 실습 2 -->
+            <div class="practice-card p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">[실습 2] 보이스피싱 예방</h2>
+                        <p class="text-sm text-red-600 font-medium">범죄 예방 수칙 및 대응</p>
+                    </div>
+                    <button onclick="copyText('text-p2', this)" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">복사하기</button>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
+                    <pre id="text-p2" class="text-gray-700 text-base leading-relaxed">정부는 연중무휴 24시간 「보이스피싱 통합대응단」을 가동하여 골든타임 대응체계를 구축하였다. 최근 발생하고 있는 주요 수법은 대포폰을 활용한 악성 앱 설치 유도 및 금융기관 사칭 대출 빙자형 사기이다. 이에 대응하기 위해 과기정통부는 문자사업자-이동통신망-개별 단말기에 이르는 강력한 3중 차단 체계를 운영 중이다. 국민들은 출처가 불분명한 URL 링크를 절대 클릭해서는 안 되며, 만약 악성 앱 설치가 의심될 경우 즉시 112 또는 금융감독원(1332)에 신고하여 계좌 지급정지를 요청해야 한다. 또한 '안심차단 서비스'를 통해 본인 모르게 개설된 계좌나 대출을 실시간으로 확인하는 것이 권장된다.</pre>
+                </div>
+            </div>
+
+            <!-- 실습 3 -->
+            <div class="practice-card p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-900">[실습 3] 백신 접종 안내</h2>
+                        <p class="text-sm text-green-600 font-medium">독감 및 코로나19 동시 접종</p>
+                    </div>
+                    <button onclick="copyText('text-p3', this)" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">복사하기</button>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
+                    <pre id="text-p3" class="text-gray-700 text-base leading-relaxed">질병관리청은 환절기를 맞아 고령층 및 면역저하자 등을 대상으로 하는 2025-2026절기 독감(인플루엔자) 및 코로나19 백신 동시 접종 권고안을 발표하였다. 이번 접종은 65세 이상 연령층에서 두 백신을 동시에 접종하더라도 면역 형성 및 안전성에 문제가 없음을 임상 데이터를 통해 확인하였다. 접종 부위 통증이나 발열 등 경증 이상 반응은 하루 이틀 내에 자연 소멸되나, 고열이나 알레르기 반응이 지속될 경우 의료기관 방문이 필요하다. 접종 당일에는 충분한 휴식을 취하고, 접종 후 20~30분간은 의료기관에 머물며 이상 반응 여부를 관찰해야 한다. 예약은 사전예약 시스템 또는 보건소 전화를 통해 가능하다.</pre>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-gray-400 text-sm">
+            복사한 텍스트를 AI 채팅창에 붙여넣고 가이드의 프롬프트를 실행하세요.
+        </footer>
+    </div>
+
+    <script>
+        function copyText(elementId, btnElement) {
+            const text = document.getElementById(elementId).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                const originalText = btnElement.innerText;
+                btnElement.innerText = '복사 완료!';
+                btnElement.classList.replace('bg-gray-900', 'bg-green-600');
+                
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.classList.replace('bg-green-600', 'bg-gray-900');
+                }, 2000);
+            } catch (err) {
+                console.error('복사 실패', err);
+            }
+            
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
