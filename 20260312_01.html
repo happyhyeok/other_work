@@ -48,9 +48,8 @@
                 </div>
                 <a href="#creative" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 3. 멀티모달 창작</a>
                 <div class="pl-4 border-l border-gray-200 ml-3 my-1 space-y-1">
-                    <a href="#creative-grok" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">영상 제작 (Grok 4)</a>
                     <a href="#creative-banana" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">비주얼 (나노 바나나 2)</a>
-                    <a href="#creative-udio" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">음악 제작 (Udio)</a>
+                    <a href="#creative-udio" class="block px-3 py-1.5 text-base text-gray-500 hover:text-gray-900">음악 제작 (Udio & Suno)</a>
                 </div>
                 <a href="#advanced" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">Part 4. 심화 학습 (내 데이터)</a>
                 <a href="#checklist" class="block px-3 py-2 text-base text-gray-700 hover:bg-gray-100 rounded-md">최종 체크리스트</a>
@@ -77,7 +76,7 @@
                     <div class="border border-gray-200 p-5 rounded-lg">
                         <div class="text-3xl mb-2">🎬</div>
                         <h4 class="text-lg font-bold text-gray-900 mb-2">수행 (제작/실행)</h4>
-                        <p class="text-base text-gray-600">홍보 영상 제작부터 자막 완성, 문서 교정까지 잡무를 대행합니다.</p>
+                        <p class="text-base text-gray-600">홍보 영상 제작부터 자막 완성, 문서 교정까지 잡무 대행합니다.</p>
                     </div>
                     <div class="border border-gray-200 p-5 rounded-lg">
                         <div class="text-3xl mb-2">👂</div>
@@ -131,11 +130,11 @@
                         <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative mb-6">
                             <span class="text-sm font-bold text-gray-500 block mb-2">1. AI에게 내릴 '지시문(프롬프트)' 복사</span>
                             <button onclick="copyText('text-summary', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
-                            <pre id="text-summary" class="text-base text-gray-800 font-mono mt-2">"당신은[역할: 15년 경력의 베테랑 강사]입니다. 첨부한[파일 종류: 질병관리청 보도자료]를 분석해 주세요. 이 복잡한 내용을[대상: 스마트폰 활용이 서툰 70대 어르신]들도 한눈에 이해할 수 있도록[형식: 큰 글씨의 3줄 요약 주의사항]으로 재구성해 주세요.
+                            <pre id="text-summary" class="text-base text-gray-800 font-mono mt-2">"당신은[역할: 15년 경력의 베테랑 강사]입니다. 아래 내용을 분석해 주세요. 이 복잡한 내용을[대상: 스마트폰 활용이 서툰 70대 어르신]들도 한눈에 이해할 수 있도록[형식: 큰 글씨의 3줄 요약 주의사항]으로 재구성해 주세요.
 
 ⚠️[할루시네이션 방지]
-1. 원문에 없는 효능이나 의학적 사실을[절대 지어내지 마세요].
-2. 복용법이나 수치 같은 정보는[원문의 숫자를 정확히 유지]해 주세요."</pre>
+1. 원문에 없는 사실을[절대 지어내지 마세요].
+2. 수치 정보는[원문의 숫자를 정확히 유지]해 주세요."</pre>
                         </div>
                         <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
                             <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
@@ -162,14 +161,7 @@
                                         <h4 class="font-bold text-gray-800">[실습 2] 보이스피싱 예방 수칙</h4>
                                     </div>
                                     <button onclick="copyText('sample-2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
-                                    <pre id="sample-2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">정부는 연중무휴 24시간 「보이스피싱 통합대응단」을 가동하여 골든타임 대응체계를 구축하였다. 최근 발생하고 있는 주요 수법은 대포폰을 활용한 악성 앱 설치 유도 및 금융기관 사칭 대출 빙자형 사기이다. 이에 대응하기 위해 과기정통부는 문자사업자-이동통신망-개별 단말기에 이르는 강력한 3중 차단 체계를 운영 중이다. 국민들은 출처가 불분명한 URL 링크를 절대 클릭해서는 안 되며, 만약 악성 앱 설치가 의심될 경우 즉시 112 또는 금융감독원(1332)에 신고하여 계좌 지급정지를 요청해야 한다. 또한 '안심차단 서비스'를 통해 본인 모르게 개설된 계좌나 대출을 실시간으로 확인하는 것이 권장된다.</pre>
-                                </div>
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">[실습 3] 독감 및 코로나19 동시 접종</h4>
-                                    </div>
-                                    <button onclick="copyText('sample-3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
-                                    <pre id="sample-3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">질병관리청은 환절기를 맞아 고령층 및 면역저하자 등을 대상으로 하는 2025-2026절기 독감(인플루엔자) 및 코로나19 백신 동시 접종 권고안을 발표하였다. 이번 접종은 65세 이상 연령층에서 두 백신을 동시에 접종하더라도 면역 형성 및 안전성에 문제가 없음을 임상 데이터를 통해 확인하였다. 접종 부위 통증이나 발열 등 경증 이상 반응은 하루 이틀 내에 자연 소멸되나, 고열이나 알레르기 반응이 지속될 경우 의료기관 방문이 필요하다. 접종 당일에는 충분한 휴식을 취하고, 접종 후 20~30분간은 의료기관에 머물며 이상 반응 여부를 관찰해야 한다. 예약은 사전예약 시스템 또는 보건소 전화를 통해 가능하다.</pre>
+                                    <pre id="sample-2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">정부는 연중무휴 24시간 「보이스피싱 통합대응단」을 가동하여 골든타임 대응체계를 구축하였다. 최근 발생하고 있는 주요 수법은 대포폰을 활용한 악성 앱 설치 유도 및 금융기관 사칭 대출 빙자형 사기이다. 이에 대응하기 위해 과기정통부는 문자사업자-이동통신망-개별 단말기에 이르는 강력한 3중 차단 체계를 운영 중이다. 국민들은 출처가 불분명한 URL 링크를 절대 클릭해서는 안 되며, 만약 악성 앱 설치가 의심될 경우 즉시 112 또는 금융감독원(1332)에 신고하여 계좌 지급정지를 요청해야 한다. 또한 '안심차단 서비스'를 통해 본인 모르게 개설된 계좌나 대출을 실시간 확인하는 것이 권장된다.</pre>
                                 </div>
                             </div>
                         </details>
@@ -191,42 +183,6 @@
 
 ⚠️[중요] 뻔한 조언은 빼고,[내일 수업 5분 전에 바로 적용 가능한 행동 지침] 위주로 알려주세요."</pre>
                         </div>
-                        <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
-                            <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
-                                <div>
-                                    <span class="text-base font-bold text-blue-600 block mb-1">2. 해결할 '상황 데이터' 복사 (실습용)</span>
-                                    <p class="text-sm text-gray-600 m-0">아래를 눌러 빈칸이 채워진 상황을 골라 전송해 보세요.</p>
-                                </div>
-                                <span class="text-blue-500 transform transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </span>
-                            </summary>
-                            <div class="px-5 pb-5 pt-2 border-t border-gray-100 space-y-4">
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">[상황 1] 기기 파편화 문제 해결</h4>
-                                    </div>
-                                    <button onclick="copyText('sample-s1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
-                                    <pre id="sample-s1" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 서울]에서[대상: 70대 어르신]을 대상으로 [주제: 스마트폰 기초]를 가르치는 강사입니다. 현재[문제 상황: 스마트폰 기종(갤럭시/아이폰)이 제각각이라 한 화면을 설명할 때마다 시간이 3배로 걸림]을 겪고 있습니다. 이를 해결하기 위한 [3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 예산은 0원이며 수업 중에 즉석에서 통제할 수 있는 방법]이어야 합니다."</pre>
-                                </div>
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">[상황 2] 저학년 집중력 저하 대처</h4>
-                                    </div>
-                                    <button onclick="copyText('sample-s2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
-                                    <pre id="sample-s2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 대전]에서[대상: 초등학교 저학년]을 대상으로[주제: 블록 코딩]을 가르치는 강사입니다. 현재[문제 상황: 아이들이 10분만 지나면 집중력을 잃고 장난을 치기 시작함]을 겪고 있습니다. 이를 해결하기 위한[3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 보조강사 없이 나 혼자서 즉각적으로 시선을 집중시키는 방법]이어야 합니다."</pre>
-                                </div>
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">[상황 3] 복습 부족 수강생 독려</h4>
-                                    </div>
-                                    <button onclick="copyText('sample-s3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">상황 복사</button>
-                                    <pre id="sample-s3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"나는[지역: 부산]에서[대상: 4050 재취업 준비생]을 대상으로[주제: 엑셀 실무 자격증]을 가르치는 강사입니다. 현재[문제 상황: 진도는 다 나갔는데 수강생들이 집에 가서 복습을 하지 않아 다음 날이면 단축키를 전부 잊어버림]을 겪고 있습니다. 이를 해결하기 위한 [3가지] 구체적인 전략을 제안해 주세요. 단,[제약 조건: 수강생들에게 부담을 주지 않는 5분 이내의 활동]이어야 합니다."</pre>
-                                </div>
-                            </div>
-                        </details>
                     </div>
 
                     <!-- 톤앤매너 -->
@@ -239,59 +195,11 @@
                         <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 relative mb-6">
                             <span class="text-sm font-bold text-gray-500 block mb-2">1. AI에게 내릴 '지시문' 복사</span>
                             <button onclick="copyText('text-tone', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">프롬프트 복사</button>
-                            <pre id="text-tone" class="text-base text-gray-800 font-mono mt-2">"이 부분은[대상: 취업 준비생]들이 읽기에 너무[현재 느낌: 딱딱하고 교장 선생님 훈화 말씀] 같습니다. 내용을[원하는 톤: 형/언니가 조언해 주듯 친근하고 힙한 느낌]으로 바꿔주세요.
+                            <pre id="text-tone" class="text-base text-gray-800 font-mono mt-2">"아래 글은 [대상: 취업 준비생]들이 읽기에 너무[현재 느낌: 딱딱하고 교장 선생님 훈화 말씀] 같습니다. 내용을[원하는 톤: 형/언니가 조언해 주듯 친근하고 힙한 느낌]으로 바꿔주세요.
 
 ⚠️[무결성 장치]
 문장의 분위기만 바꾸되, 원문에 포함된[핵심 정보(장소, 시간, 준비물, 규칙)는 절대 변경하거나 누락하지 마세요]."</pre>
                         </div>
-                        <details class="group border border-blue-200 rounded-lg bg-white shadow-sm overflow-hidden">
-                            <summary class="cursor-pointer p-5 flex justify-between items-center hover:bg-blue-50 transition-colors">
-                                <div>
-                                    <span class="text-base font-bold text-blue-600 block mb-1">2. 바꿀 '원문 데이터' 복사 (실습용)</span>
-                                    <p class="text-sm text-gray-600 m-0">프롬프트를 복사했다면, 딱딱한 원문을 골라 AI에게 전송해 보세요.</p>
-                                </div>
-                                <span class="text-blue-500 transform transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </span>
-                            </summary>
-                            <div class="px-5 pb-5 pt-2 border-t border-gray-100 space-y-4">
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs font-bold bg-red-100 text-red-700 px-2 py-1 rounded-full">현재 느낌: 차갑고 위압적인 공고문</span>
-                                        <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-full">변경 추천: 친절하고 따뜻한 안내문</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">예시 1. 강의실 이용 수칙</h4>
-                                    </div>
-                                    <button onclick="copyText('text-t1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
-                                    <pre id="text-t1" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"본 강의실 내에서는 음식물 섭취가 엄격히 금지됨을 알립니다. 적발 시 퇴실 조치될 수 있습니다. 또한 강의 시작 10분 전까지 입실을 완료해야 하며, 지각 시 출석 점수에서 감점 처리됩니다. 개인 소지품 분실에 대한 책임은 본인에게 있습니다."</pre>
-                                </div>
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs font-bold bg-orange-100 text-orange-700 px-2 py-1 rounded-full">현재 느낌: 지루한 교과서 말투</span>
-                                        <span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded-full">변경 추천: 듬직한 선배의 꿀팁 톤</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">예시 2. 자소서 작성 팁</h4>
-                                    </div>
-                                    <button onclick="copyText('text-t2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
-                                    <pre id="text-t2" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"자기소개서를 작성할 때는 본인의 역량을 객관적인 수치로 증명하는 것이 효과적입니다. 구체적인 사례를 나열하고 결론부터 서술하는 두괄식 구조를 취해야 합니다. 또한 기업의 핵심 가치를 분석하여 본인의 비전과 일치함을 강조하는 과정이 필수적으로 요구됩니다."</pre>
-                                </div>
-                                <div class="border border-gray-100 bg-gray-50 rounded-lg p-4 relative">
-                                    <div class="flex flex-wrap gap-2 mb-3">
-                                        <span class="text-xs font-bold bg-gray-200 text-gray-700 px-2 py-1 rounded-full">현재 느낌: 무미건조한 공문</span>
-                                        <span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded-full">변경 추천: 활기차고 참여하고 싶은 홍보 톤</span>
-                                    </div>
-                                    <div class="flex justify-between items-center mb-2 pr-24">
-                                        <h4 class="font-bold text-gray-800">예시 3. 마을 축제 참여 안내</h4>
-                                    </div>
-                                    <button onclick="copyText('text-t3', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">원문 복사</button>
-                                    <pre id="text-t3" class="text-sm text-gray-600 font-mono break-all whitespace-pre-wrap mt-2">"2026년 5월 10일 강릉시청 앞 광장에서 마을 축제를 개최할 예정입니다. 각 세대당 1명 이상의 참여를 권고하며, 참가자에게는 소정의 기념품이 지급될 수 있습니다. 우천 시 행사는 취소되거나 연기될 수 있음을 미리 공지합니다."</pre>
-                                </div>
-                            </div>
-                        </details>
                     </div>
 
                     <!-- 홍보 -->
@@ -317,27 +225,13 @@
                 <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 3. 멀티모달 창작 스튜디오</h2>
                 <p class="text-base text-gray-500 mb-8">도서관 문화강좌 강사로서 '최소한의 노력으로 최대의 시각/청각 효과'를 낼 수 있는 2026년형 실무 가이드를 제안해 드립니다.</p>
 
-                <div class="space-y-10">
-                    <!-- 영상 제작: Grok 4 -->
-                    <div id="creative-grok">
-                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎬 1. 영상 제작: Grok 4 (그록 4)</h3>
-                        <p class="text-base text-gray-600 mb-4">단순 자막 편집을 넘어, 이미지 한 장만으로 사운드가 포함된 고퀄리티 영상을 생성하는 데 가장 효율적입니다.</p>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                            <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
-                                <li><strong>홍보용 숏츠:</strong> 강좌 포스터나 관련 이미지를 업로드하고 <strong>'동영상 만들기'</strong> 버튼을 누르면 6초 내외의 시네마틱 홍보 영상이 즉시 생성됩니다.</li>
-                                <li><strong>강의 오프닝:</strong> "조용한 도서관에서 책장이 넘어가는 모습" 같은 프롬프트를 입력해 배경음이 포함된 고화질 오프닝 영상을 1분 안에 완성할 수 있습니다.</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-sm text-blue-700 font-bold">
-                                ✓ 무료 활용: X(구 트위터) 계정 로그인 시 기본 생성 기능을 무료로 제공합니다.
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="space-y-12">
+                    
                     <!-- 이미지 & 비주얼: 나노 바나나 2 -->
                     <div id="creative-banana">
-                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎨 2. 이미지 & 비주얼: 나노 바나나 2 (Gemini 3 Flash Image)</h3>
+                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎨 1. 이미지 & 비주얼: 나노 바나나 2 (Gemini 3 Flash Image)</h3>
                         <p class="text-base text-gray-600 mb-4">기존의 복잡한 이미지 생성 도구와 달리, 한국어 명령어를 완벽하게 이해하며 사진 속 텍스트나 인물 디테일(손가락 등)을 가장 정확하게 표현합니다.</p>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                             <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
                                 <li><strong>맞춤형 삽화:</strong> "70대 어르신이 스마트폰을 보며 환하게 웃는 모습"을 요청하여 교안에 바로 사용 가능한 4K 고해상도 이미지를 생성합니다.</li>
                                 <li><strong>이미지 기반 영상 시연:</strong> 생성된 이미지를 바탕으로 <strong>Veo(Google의 영상 모델)</strong>와 연동해 교육용 시뮬레이션 영상을 제작할 수 있습니다.</li>
@@ -346,21 +240,128 @@
                                 ✓ 무료 활용: Gemini 홈페이지에서 '이미지 만들기' 메뉴를 통해 무료로 사용 가능합니다.
                             </div>
                         </div>
-                    </div>
 
-                    <!-- 음악 제작: Udio & 파워디렉터 AI -->
-                    <div id="creative-udio">
-                        <h3 class="text-2xl font-bold border-b border-gray-200 pb-2 mb-4">🎵 3. 음악 제작: Udio (유디오) & 파워디렉터 AI</h3>
-                        <p class="text-base text-gray-600 mb-4">Suno보다 더 선명한 고음질 배경음악(BGM)과 감성적인 질감을 제공합니다.</p>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                            <ul class="list-disc pl-5 text-base text-gray-800 space-y-3 mb-4">
-                                <li><strong>수업 BGM:</strong> "명상용 로파이 재즈" 등 수업 분위기에 맞는 곡을 프롬프트 입력만으로 생성합니다.</li>
-                                <li><strong>자동 길이 조절:</strong> <strong>파워디렉터 AI</strong>의 음악 생성 기능을 쓰면 영상 길이에 맞춰 배경음악의 시작과 끝을 자동으로 맞춰줍니다.</li>
-                            </ul>
-                            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-sm text-blue-700 font-bold">
-                                ✓ 무료 활용: Udio는 매일 일정량의 무료 크레딧을 제공하며, 파워디렉터는 무료 버전에서도 AI 음악 생성 기능을 지원합니다.
+                        <!-- 아바타 생성 실습 프롬프트 -->
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                                <span class="text-xl">👩‍🏫</span> 나의 아바타 프로필 이미지 만들기 (실습)
+                            </h4>
+                            <p class="text-sm text-gray-600 mb-3">나노 바나나 2 (Gemini)에 아래 프롬프트를 복사해 넣고, 괄호 안의 내용을 본인의 모습에 맞게 수정해보세요.</p>
+                            <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                <button onclick="copyText('text-avatar-prompt', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                <pre id="text-avatar-prompt" class="text-base text-gray-800 font-mono mt-2 pt-8 sm:pt-2 whitespace-pre-wrap break-all">"[스타일: 3D 픽사/디즈니 애니메이션 스타일, 따뜻하고 친근한 느낌]
+[인물 묘사: 40대 후반의 한국인 여성 강사, 단정한 단발머리, 뿔테 안경 착용, 밝은 미소를 짓고 있음]
+[의상: 프로페셔널해 보이는 베이지색 재킷과 흰색 블라우스]
+[배경: 책과 스마트 기기가 놓여 있는 깔끔한 강의실 데스크 앞, 배경은 약간 블러 처리]
+[추가 디테일: 한 손에는 태블릿 PC를 들고 있고, 전체적으로 신뢰감과 전문성이 느껴지는 고화질 4K 이미지]"</pre>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- 음악 제작: Udio & Suno -->
+                    <div id="creative-udio">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-200 pb-2 mb-4">
+                            <h3 class="text-2xl font-bold">🎵 2. 음악 제작: Udio & Suno</h3>
+                        </div>
+                        <p class="text-base text-gray-600 mb-4">프롬프트 몇 줄로 수업 테마에 맞는 배경음악(BGM)이나 로고송을 순식간에 작곡할 수 있는 AI 음악 생성의 양대 산맥입니다.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <!-- Udio -->
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 relative">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="text-xl font-bold text-gray-900">🎧 Udio (유디오)</h4>
+                                    <a href="https://www.udio.com/" target="_blank" class="text-sm text-blue-600 hover:underline">바로가기 ↗</a>
+                                </div>
+                                <p class="text-sm font-bold text-gray-500 mb-3">"압도적인 고음질과 감성적인 질감"</p>
+                                <ul class="list-disc pl-5 text-sm text-gray-800 space-y-2">
+                                    <li>음질(마스터링 수준)이 매우 뛰어남</li>
+                                    <li>클래식, 재즈, 명상 음악 등 <strong>BGM 제작</strong>에 강점</li>
+                                    <li>세밀한 악기 편곡 및 감정선 표현 우수</li>
+                                </ul>
+                            </div>
+
+                            <!-- Suno -->
+                            <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 relative">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="text-xl font-bold text-gray-900">🎤 Suno (수노)</h4>
+                                    <a href="https://suno.com/" target="_blank" class="text-sm text-blue-600 hover:underline">바로가기 ↗</a>
+                                </div>
+                                <p class="text-sm font-bold text-gray-500 mb-3">"직관적인 사용성과 캐치한 멜로디"</p>
+                                <ul class="list-disc pl-5 text-sm text-gray-800 space-y-2">
+                                    <li>한국어 가사 인식 및 자연스러운 발음 우수</li>
+                                    <li>팝, 댄스, 트로트 등 <strong>대중적인 노래 제작</strong>에 강점</li>
+                                    <li>빠른 생성 속도와 뚜렷한 곡 구조(절, 후렴구)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 p-4 bg-blue-50 border border-blue-100 rounded-lg text-sm text-blue-800 font-bold flex gap-3 items-start">
+                            <span class="text-lg">💡</span>
+                            <p class="mt-0.5">실무 팁: 가사가 없는 잔잔하고 고급스러운 수업 대기용 BGM은 <strong>Udio</strong>를, 수강생들을 집중시킬 재미있는 한국어 가사 기반의 오프닝 로고송은 <strong>Suno</strong>를 사용하는 것을 추천합니다.</p>
+                        </div>
+
+                        <!-- 음악 생성 실전 프롬프트 옵션 -->
+                        <div class="mt-8 space-y-8">
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
+                                <span class="text-xl">🎹</span> 실전 음악 생성 프롬프트 (복사해서 사용하세요)
+                            </h4>
+                            
+                            <!-- Suno 프롬프트들 -->
+                            <div>
+                                <h5 class="text-base font-bold text-blue-700 mb-3 flex items-center gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded text-xs">Suno 전용</span>
+                                    가사가 있는 보컬 곡에 최적화
+                                </h5>
+                                <div class="space-y-3">
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 1: 신나는 수업 오프닝 로고송 (트로트/댄스)</span>
+                                        <p class="text-xs text-gray-500 mb-3">Song Description 창에 붙여넣으면 AI가 상황에 맞는 가사를 직접 써서 노래를 부릅니다.</p>
+                                        <button onclick="copyText('text-suno-1', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-suno-1" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"신나고 경쾌한 K-트로트 스타일, 어르신들이 스마트폰을 배워서 손주와 카톡하며 즐거워하는 내용의 가사, 긍정적이고 밝은 분위기, 신나는 브라스 밴드 반주, 여성 보컬"</pre>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 2: 쉬는 시간 안내송 (어쿠스틱 팝)</span>
+                                        <p class="text-xs text-gray-500 mb-3">휴식 시간에 틀어두어 수강생들의 긴장을 풀어줄 때 좋습니다.</p>
+                                        <button onclick="copyText('text-suno-2', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-suno-2" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"따뜻하고 부드러운 어쿠스틱 팝 스타일, 10분 동안 차 한잔하며 쉬어가는 시간이라는 내용의 가사, 편안한 기타 선율, 다정한 남성 보컬"</pre>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 3: 초등학생 집중력 UP! 호기심 유발송 (K-POP/댄스)</span>
+                                        <p class="text-xs text-gray-500 mb-3">수업 시작 전, 아이들의 시선을 확 끌어모으고 흥미를 유발하고 싶을 때 사용하세요.</p>
+                                        <button onclick="copyText('text-suno-3', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-suno-3" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"신나고 통통 튀는 K-POP 아이돌 스타일, 오늘 배울 내용이 마법처럼 재미있을 거라는 내용의 가사, 호기심을 자극하는 귀여운 효과음, 에너지 넘치는 밝은 여성 보컬"</pre>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Udio 프롬프트들 -->
+                            <div>
+                                <h5 class="text-base font-bold text-purple-700 mb-3 flex items-center gap-2">
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-0.5 rounded text-xs">Udio 전용</span>
+                                    가사가 없는 고음질 연주곡(BGM)에 최적화
+                                </h5>
+                                <p class="text-sm text-gray-500 mb-3">※ Udio는 장르/분위기를 나타내는 <strong>'태그(Tag, 영어 추천)'</strong> 형식으로 나열하여 입력할 때 퀄리티가 가장 좋습니다.</p>
+                                <div class="space-y-3">
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 1: 실습 시간 집중용 BGM (로파이 재즈)</span>
+                                        <button onclick="copyText('text-udio-1', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-udio-1" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"lo-fi hip hop, chillhop, jazz, instrumental, no vocals, relaxing background music for studying, warm acoustic guitar, soft piano, 집중하기 좋은 차분하고 따뜻한 분위기"</pre>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 2: 수업 마무리 및 힐링용 BGM (시네마틱 앰비언트)</span>
+                                        <button onclick="copyText('text-udio-2', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-udio-2" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"cinematic ambient, peaceful, meditation, instrumental, no vocals, soft synth pads, nature inspired, calm, soothing, 수업을 기분 좋게 마무리하는 평온한 배경음악"</pre>
+                                    </div>
+                                    <div class="bg-white border border-gray-200 rounded-lg p-5 relative shadow-sm">
+                                        <span class="text-sm font-bold text-gray-800 block mb-1">옵션 3: 초등학생 실습 시간용 BGM (캐주얼 게임 사운드트랙)</span>
+                                        <p class="text-xs text-gray-500 mb-3">아이들이 지루해하지 않고 만들기나 코딩 실습에 재미있게 몰입할 수 있도록 돕는 템포입니다.</p>
+                                        <button onclick="copyText('text-udio-3', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">프롬프트 복사</button>
+                                        <pre id="text-udio-3" class="text-base text-gray-800 font-mono mt-3 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"upbeat, 8-bit, chiptune, cheerful, casual game soundtrack, adventure, instrumental, no vocals, energetic, playful, 아이들이 신나게 집중할 수 있는 귀엽고 통통 튀는 분위기"</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -368,18 +369,51 @@
             <!-- 심화 학습 -->
             <section id="advanced" class="doc-section">
                 <h2 class="text-3xl font-bold text-gray-900 mb-2">Part 4. 심화 학습 (내 데이터 활용)</h2>
-                <p class="text-base text-gray-500 mb-8">강의의 품격을 높이는 맞춤형 AI 활용법입니다.</p>
+                <p class="text-base text-gray-500 mb-8">강의 기획부터 행정 서류, 맞춤형 수강생 관리까지 강의의 품격을 높이는 AI 활용법입니다.</p>
 
+                <!-- 1. 강의 계획서 초안 작성 (New) -->
                 <div class="mb-10">
-                    <h3 class="text-xl font-bold mb-2">🎓 학습 도우미 & 퀴즈</h3>
-                    <p class="text-base text-gray-600 mb-3">수업 직후 수강생 이해도 확인을 위한 OX 퀴즈를 생성합니다.</p>
+                    <h3 class="text-xl font-bold mb-2">📝 강의 계획서 초안 작성 (기획)</h3>
+                    <p class="text-base text-gray-600 mb-3">주제와 대상만으로 주차별 커리큘럼을 빠르게 뽑아냅니다. (초등학교 3~4학년 예시)</p>
                     <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
-                        <button onclick="copyText('text-quiz', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
-                        <pre id="text-quiz" class="text-base text-gray-800 font-mono mt-1">"오늘 강의한 내 자료를 바탕으로 수강생들이 반드시 알고 가야 할 핵심 정보를[OX 퀴즈 5개]로 만들어줘. 퀴즈 아래에는 정답과 수강생들이 이해하기 쉬운 간단한 해설도 포함해줘."</pre>
+                        <button onclick="copyText('text-plan', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-plan" class="text-base text-gray-800 font-mono mt-1 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"당신은 10년 경력의 초등학생 대상 전문 강사입니다. [대상: 초등학교 3~4학년]을 대상으로 하는 [주제: 블록 코딩으로 나만의 미니 게임 만들기] 4주 차 강의 계획서를 표 형태로 작성해 주세요. 아이들의 흥미를 끌 수 있는 재미있는 활동명과 매주 달성할 구체적인 학습 목표를 포함해 주세요."</pre>
                     </div>
                 </div>
 
-                <!-- NotebookLM 마스터 (이미지 바탕 개편) -->
+                <!-- 2. 학습 도우미 & 퀴즈 (Existing) -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold mb-2">🎓 학습 도우미 & 퀴즈 (수업 중)</h3>
+                    <p class="text-base text-gray-600 mb-3">수업 직후 수강생 이해도 확인을 위한 OX 퀴즈를 생성합니다.</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
+                        <button onclick="copyText('text-quiz', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-quiz" class="text-base text-gray-800 font-mono mt-1 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"오늘 강의한 내 자료를 바탕으로 수강생들이 반드시 알고 가야 할 핵심 정보를 [OX 퀴즈 5개]로 만들어줘. 퀴즈 아래에는 정답과 수강생들이 이해하기 쉬운 간단한 해설도 포함해줘."</pre>
+                    </div>
+                </div>
+
+                <!-- 3. 수강생 맞춤형 피드백 (New) -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold mb-2">💌 수강생 맞춤형 피드백 (수강생 관리)</h3>
+                    <p class="text-base text-gray-600 mb-3">수강생의 특징을 담아 학부모님께 보낼 따뜻한 종강 피드백 메시지를 작성합니다.</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
+                        <button onclick="copyText('text-feedback', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-feedback" class="text-base text-gray-800 font-mono mt-1 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"이번 주 [주제: 미니 게임 만들기] 4주 차 수업이 종강했습니다. 초등학교 3학년 [학생 이름: 지훈이]의 학부모님께 보낼 카카오톡 피드백 메시지를 작성해 주세요. 지훈이의 특징은 [특징: 처음엔 코딩을 어려워했지만, 마지막엔 스스로 레이싱 게임을 완성할 정도로 집중력이 뛰어나고 창의적인 아이디어를 많이 냄]입니다. 다정하고 전문적인 방과후 강사의 말투로 써주세요."</pre>
+                    </div>
+                </div>
+
+                <!-- 4. 강의 결과 보고서 작성 (New) -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold mb-2">📋 강의 결과 보고서/일지 자동화 (행정 업무)</h3>
+                    <p class="text-base text-gray-600 mb-3">수업 후 거친 메모를 기관 제출용 격식 있는 공문서로 변환합니다.</p>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
+                        <button onclick="copyText('text-report', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-report" class="text-base text-gray-800 font-mono mt-1 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"아래 대충 작성한 수업 메모를 바탕으로 기관 제출용 [일일 강의 결과 보고서]를 격식 있는 공문서 톤으로 작성해 주세요. (도입-전개-결론-특이사항 구조)
+
+[오늘의 메모: 초등 3~4학년 대상 1주 차 코딩 수업 완료. 총 15명 중 1명 결석(감기). 오늘 스크래치 화면 구성 알아보고 고양이 캐릭터 걷게 하기 실습함. 아이들이 마우스 조작을 좀 어려워해서 다음 주엔 보조강사 도움이 더 필요할 듯함.]"</pre>
+                    </div>
+                </div>
+
+                <!-- NotebookLM 마스터 (Existing) -->
                 <div class="mb-10">
                     <div class="flex justify-between items-center mb-2">
                         <h3 class="text-xl font-bold">📓 NotebookLM 마스터 (최신 슬라이드 가이드)</h3>
@@ -408,25 +442,26 @@
 
                     <div class="bg-white border border-gray-200 rounded-lg p-5 relative mb-4">
                         <span class="text-base font-bold text-blue-600 block mb-2">[STEP 1] Gemini 스타일 추출 프롬프트</span>
-                        <button onclick="copyText('text-notebook-1', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
-                        <pre id="text-notebook-1" class="text-base text-gray-800 font-mono mt-2">"(이미지 첨부 후) 내가 NotebookLM으로 슬라이드를 만들려고 해. 첨부한 이미지의[톤앤매너, 색상 조합, 글꼴 느낌]을 분석해서, NotebookLM '슬라이드 스타일 설명'란에 넣을 수 있는 상세 가이드를 한국어로 작성해줘."</pre>
+                        <button onclick="copyText('text-notebook-1', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-notebook-1" class="text-base text-gray-800 font-mono mt-2 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"(이미지 첨부 후) 내가 NotebookLM으로 슬라이드를 만들려고 해. 첨부한 이미지의[톤앤매너, 색상 조합, 글꼴 느낌]을 분석해서, NotebookLM '슬라이드 스타일 설명'란에 넣을 수 있는 상세 가이드를 한국어로 작성해줘."</pre>
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg p-5 relative">
                         <span class="text-base font-bold text-green-600 block mb-2">[STEP 2] NotebookLM 슬라이드 생성 설정</span>
-                        <button onclick="copyText('text-notebook-2', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
-                        <pre id="text-notebook-2" class="text-base text-gray-800 font-mono mt-2">"첨부된 유튜브 영상과 PDF를 분석해서[강의용 10페이지 슬라이드]를 만들어줘.
+                        <button onclick="copyText('text-notebook-2', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-notebook-2" class="text-base text-gray-800 font-mono mt-2 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"첨부된 유튜브 영상과 PDF를 분석해서[강의용 10페이지 슬라이드]를 만들어줘.
 [디자인 스타일]: (여기에 위에서 추출한 가이드 붙여넣기)
 [구성]: 핵심 개념 설명 60%, 실습 안내 20%, Q&A 20%"</pre>
                     </div>
                 </div>
 
+                <!-- 퍼스널 브랜딩 (Existing) -->
                 <div>
-                    <h3 class="text-xl font-bold mb-2">📑 퍼스널 브랜딩 & 포트폴리오</h3>
+                    <h3 class="text-xl font-bold mb-2">📑 퍼스널 브랜딩 & 포트폴리오 (마무리)</h3>
                     <p class="text-base text-gray-600 mb-3">기존 강의 이력이나 메모를 업로드하여 전문적인 프로필 초안을 작성합니다.</p>
                     <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 relative">
-                        <button onclick="copyText('text-portfolio', this)" class="absolute top-4 right-4 text-sm bg-white border border-gray-300 px-3 py-1.5 rounded hover:bg-gray-100">복사하기</button>
-                        <pre id="text-portfolio" class="text-base text-gray-800 font-mono mt-1">"당신은[역할: 20년 경력의 베테랑 강사 브랜딩 전문가]입니다. 내가 올린 강의 활동 자료를 분석하고, 새로운 문화센터 지원을 위한[전문 프로필 초안]을 작성해주세요. 키워드는 '실습 중심의 강의'와 '풍부한 수강생 소통'입니다."</pre>
+                        <button onclick="copyText('text-portfolio', this)" class="absolute top-4 right-4 text-sm bg-gray-800 text-white px-3 py-1.5 rounded hover:bg-gray-700 transition-colors">복사하기</button>
+                        <pre id="text-portfolio" class="text-base text-gray-800 font-mono mt-1 pt-6 sm:pt-0 whitespace-pre-wrap break-all">"당신은[역할: 20년 경력의 베테랑 강사 브랜딩 전문가]입니다. 내가 올린 강의 활동 자료를 분석하고, 새로운 문화센터 지원을 위한[전문 프로필 초안]을 작성해주세요. 키워드는 '실습 중심의 강의'와 '풍부한 수강생 소통'입니다."</pre>
                     </div>
                 </div>
             </section>
@@ -446,7 +481,7 @@
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="font-bold text-gray-500 shrink-0">[STEP 3]</span>
-                            <span>작곡한 곡을 <strong>Grok 4</strong>에 넣어 '시네마틱 홍보 영상' 만들어보기</span>
+                            <span>배운 프롬프트로 <strong>'나만의 아바타 프로필 이미지'</strong> 만들어보기</span>
                         </li>
                     </ul>
                 </div>
@@ -466,12 +501,12 @@
                 document.execCommand('copy');
                 const originalText = btnElement.innerText;
                 btnElement.innerText = '복사 완료!';
-                btnElement.classList.add('bg-blue-100', 'text-blue-700', 'border-blue-300');
-                btnElement.classList.remove('bg-white', 'hover:bg-gray-100');
+                btnElement.classList.add('bg-gray-800', 'text-white', 'border-gray-800');
+                btnElement.classList.remove('bg-white', 'hover:bg-gray-100', 'text-sm');
                 setTimeout(() => {
                     btnElement.innerText = originalText;
-                    btnElement.classList.remove('bg-blue-100', 'text-blue-700', 'border-blue-300');
-                    btnElement.classList.add('bg-white', 'hover:bg-gray-100');
+                    btnElement.classList.remove('bg-gray-800', 'text-white', 'border-gray-800');
+                    btnElement.classList.add('bg-white', 'hover:bg-gray-100', 'text-sm');
                 }, 2000);
             } catch (err) { console.error('복사 실패', err); }
             document.body.removeChild(textarea);
