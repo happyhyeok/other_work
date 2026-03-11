@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 활용 스마트 강의 설계 특강 교안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 260px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 3rem 5rem;
+            max-width: 1000px;
+        }
+        .prompt-box {
+            background-color: #f1f3f4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            position: relative;
+            margin: 1rem 0;
+            border-left: 4px solid #1a73e8;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #f8f9fa;
+            border-color: #1a73e8;
+            color: #1a73e8;
+        }
+        .link-card {
+            display: block;
+            background: #fff;
+            border: 1px solid #dadce0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #3c4043;
+            transition: all 0.2s;
+        }
+        .link-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #1a73e8;
+        }
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .content { margin-left: 0; padding: 1.5rem; }
+        }
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #323232;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            display: none;
+            z-index: 1000;
+        }
+        .trend-card {
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: #ffffff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th {
+            background-color: #f1f3f4;
+            font-weight: bold;
+            text-align: left;
+            padding: 12px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.95rem;
+        }
+        .studio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .studio-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .scenario-step {
+            border-left: 2px dashed #cbd5e1;
+            padding-left: 1.5rem;
+            margin-left: 0.75rem;
+            position: relative;
+        }
+        .scenario-step::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            background: #3b82f6;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <div id="toast" class="toast">클립보드에 복사되었습니다.</div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <h2 class="text-xl font-bold mb-8 text-blue-600">특강 목차</h2>
+        <ul class="space-y-4 text-sm">
+            <li><a href="#intro" class="hover:text-blue-600 block">0. 시작 전 환경 설정</a></li>
+            <li><a href="#trends" class="hover:text-blue-600 block">1. 2026 AI 트렌드 요약</a></li>
+            <li><a href="#tools" class="hover:text-blue-600 block">2. 주요 AI 도구 소개</a></li>
+            <li><a href="#find-lecture" class="hover:text-blue-600 block">강좌 정보 찾기</a></li>
+            <li><a href="#session1" class="hover:text-blue-600 block font-medium">3. 실습 1: Gemini 활용</a></li>
+            <li><a href="#session2" class="hover:text-blue-600 block font-medium">4. 실습 2: NotebookLM 마스터</a></li>
+            <li><a href="#sharing" class="hover:text-blue-600 block">5. 결과물 공유 (Padlet)</a></li>
+        </ul>
+        <div class="mt-20 text-xs text-gray-400">
+            강릉교육문화회관 강사 대상<br>
+            AI 스마트 강의 설계 특강
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="mb-12 border-b pb-8">
+            <div class="text-blue-600 font-bold mb-2 font-mono tracking-tighter">Gangneung Education & Culture Center</div>
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">강사님을 위한 AI 업무 파트너 활용법</h1>
+            <p class="text-lg text-gray-600">성인 교육 전문가의 관점에서 본 강의 고도화 전략</p>
+        </header>
+
+        <!-- Section 0: Preparation -->
+        <section id="intro" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">0</span>
+                실습 전 환경 설정
+            </h2>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg shadow-sm">
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-yellow-600 mr-2">✔</span>
+                        <span><strong>브라우저:</strong> 반드시 <span class="font-semibold text-blue-700 underline">Chrome(크롬)</span>을 사용하세요.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-yellow-600 mr-2">✔</span>
+                        <span><strong>접속 모드:</strong> <span class="italic text-gray-600 underline cursor-help">우측 상단 프로필 > 게스트 모드</span> 접속 시 더 쾌적합니다.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-yellow-600 mr-2">✔</span>
+                        <span><strong>구글 로그인:</strong> 실습을 위해 <span class="font-semibold text-red-600">구글 계정</span> 로그인을 확인해 주세요.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 1: 2026 AI Trends -->
+        <section id="trends" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">1</span>
+                2026 AI 트렌드: '업무 파트너'의 시대
+            </h2>
+            <div class="space-y-6">
+                <div class="trend-card border-l-4 border-l-blue-500 shadow-sm">
+                    <h3 class="font-bold text-xl mb-3 text-blue-800">1. 멀티모달(Multimodal)의 일상화</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        이제 AI는 텍스트만 읽지 않습니다. 사진을 찍어 올리면 분석하고, 목소리를 들으며 대화하고, 영상을 이해합니다. 강사님들의 강의실 풍경이나 교안 이미지가 바로 데이터가 됩니다.
+                    </p>
+                </div>
+                <div class="trend-card border-l-4 border-l-blue-500 shadow-sm">
+                    <h3 class="font-bold text-xl mb-3 text-blue-800">2. 개인화된 지식 엔진</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        범용적인 정보 전달을 넘어, '나의 교안', '나의 자료'를 학습한 전용 AI가 등장했습니다. 강사님만의 고유한 강의 스타일을 AI가 학습하여 보조할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Tool Intro -->
+        <section id="tools" class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">2</span>
+                오늘 사용할 주요 AI 도구
+            </h2>
+            <div class="space-y-4">
+                <a href="https://gemini.google.com" target="_blank" class="link-card flex items-start space-x-5">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-blue-600 text-2xl font-bold">G</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-xl">Gemini (제미나이)</span>
+                            <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded border border-blue-200">추천</span>
+                        </div>
+                        <p class="text-blue-600 text-sm font-medium mb-2 italic">"구글의 가장 똑똑한 눈과 머리"</p>
+                        <ul class="text-sm text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                            <li>• 이미지 분석 및 텍스트 변환 탁월</li>
+                            <li>• 구글 생태계(문서, 메일) 연동</li>
+                            <li>• 최신 정보 반영 속도 빠름</li>
+                        </ul>
+                    </div>
+                </a>
+
+                <a href="https://chatgpt.com" target="_blank" class="link-card flex items-start space-x-5 border-teal-100">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-teal-600 text-2xl font-bold">C</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-xl">ChatGPT (챗GPT)</span>
+                        </div>
+                        <p class="text-teal-600 text-sm font-medium mb-2 italic">"창의적인 글쓰기와 논리적 대화"</p>
+                        <ul class="text-sm text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                            <li>• 독창적인 커리큘럼 설계 및 아이디어 뱅크</li>
+                            <li>• 홍보 문구 및 스토리텔링에 강점</li>
+                            <li>• 대중적이고 직관적인 인터페이스</li>
+                        </ul>
+                    </div>
+                </a>
+
+                <a href="https://notebooklm.google.com" target="_blank" class="link-card flex items-start space-x-5 border-green-100">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-green-600 text-2xl font-bold">N</span>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="font-bold text-xl">NotebookLM</span>
+                            <span class="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded border border-green-200">필수</span>
+                        </div>
+                        <p class="text-green-600 text-sm font-medium mb-2 italic">"나만의 전문 지식 비서"</p>
+                        <ul class="text-sm text-gray-600 grid grid-cols-1 md:grid-cols-2 gap-x-4">
+                            <li>• PDF, 웹사이트, 유튜브 링크 학습</li>
+                            <li>• 소스 기반의 정확한 답변 (환각 최소화)</li>
+                            <li>• 오디오 오버뷰 등 다양한 자동화 기능</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- New Section: Find Lecture List -->
+        <section id="find-lecture" class="mb-12">
+            <div class="bg-gray-100 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-sm border border-gray-200">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">📋 실습 자료 준비하기</h3>
+                    <p class="text-sm text-gray-600">현재 교육문화회관 강좌 목록에서 실습에 사용할 텍스트나 이미지를 가져오세요.</p>
+                </div>
+                <a href="https://lib.gwe.go.kr/gnecc/menu/4404/lecture-event/list/all" target="_blank" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-blue-700 transition-colors flex items-center shadow-md">
+                    강릉교육문화관 강좌 목록 가기
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 3: Session 1 -->
+        <section id="session1" class="mb-16">
+            <div class="flex items-center justify-between mb-6 border-b pb-2">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">3</span>
+                    실습 1: 커리큘럼 고도화 (Gemini)
+                </h2>
+            </div>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="font-semibold text-lg mb-2 text-gray-700">프롬프트 A: 어르신 맞춤형 커리큘럼</h3>
+                    <div class="prompt-box">
+                        <button class="copy-btn" onclick="copyText('prompt1')">복사</button>
+                        <code id="prompt1" class="text-sm block whitespace-pre-wrap">내가 강릉교육문화회관에서 운영 중인 [강좌명] 수업의 12회차 커리큘럼을 다시 짜줘. 대상은 60대 이상 어르신들이야. 용어는 최대한 쉽게 풀어주고, 매 차시마다 '보람'을 느낄 수 있는 실습 결과물이 나오도록 구성해줘.</code>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-lg mb-2 text-gray-700">프롬프트 B: 이미지 인식 기반 안내문</h3>
+                    <div class="bg-blue-50 p-4 rounded mb-2 text-xs text-blue-800 italic">
+                        ※ 팁: 강좌 안내문 이미지나 수업 사진을 Gemini(클립 아이콘)에 업로드한 뒤 복사하세요.
+                    </div>
+                    <div class="prompt-box">
+                        <button class="copy-btn" onclick="copyText('prompt2')">복사</button>
+                        <code id="prompt2" class="text-sm block whitespace-pre-wrap">첨부한 이미지(강좌 안내문) 내용을 바탕으로 수강생 단톡방에 올릴 친절하고 따뜻한 공지 문구를 작성해줘. 일시, 장소, 준비물을 한눈에 보기 좋게 정리하고, 마지막에 참여를 독려하는 문구도 포함해줘. 😊</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Session 2 -->
+        <section id="session2" class="mb-16">
+            <div class="flex items-center justify-between mb-6 border-b pb-2">
+                <h2 class="text-2xl font-bold flex items-center">
+                    <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">4</span>
+                    실습 2: NotebookLM 마스터
+                </h2>
+            </div>
+
+            <!-- 특징 요약 표 -->
+            <div class="mb-10">
+                <h3 class="text-lg font-bold mb-4 text-blue-700">📌 NotebookLM의 핵심 특징 및 기본 활용법</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>단계</th>
+                            <th>내용</th>
+                            <th>특징 및 장점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. 소스 업로드</td>
+                            <td>PDF, 텍스트, 웹사이트 URL, <strong>유튜브 링크</strong></td>
+                            <td>내가 업로드한 자료 안에서만 답변하므로 정확도가 매우 높음</td>
+                        </tr>
+                        <tr>
+                            <td>2. 노트북 가이드</td>
+                            <td>노트북 가이드(Studio) 기능 활용</td>
+                            <td>자료를 넣기만 하면 AI가 자동으로 요약, 퀴즈, 마인드맵 등을 생성</td>
+                        </tr>
+                        <tr>
+                            <td>3. 오디오 오버뷰</td>
+                            <td>Deep Dive (오디오 대화) 생성</td>
+                            <td>문서 내용을 두 명의 AI가 팟캐스트 형식으로 재미있게 설명</td>
+                        </tr>
+                        <tr>
+                            <td>4. 인라인 채팅</td>
+                            <td>궁금한 점 질문 및 노트 저장</td>
+                            <td>자료의 특정 부분을 인용하여 답변하며, 답변을 바로 '노트'로 저장 가능</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 스튜디오 기능 섹션 -->
+            <div class="mb-10">
+                <h3 class="text-lg font-bold mb-4 text-green-700">✨ 노트북 가이드(Studio) 제공 기능</h3>
+                <div class="studio-grid">
+                    <div class="studio-item">🎙️ AI 오디오 오버뷰</div>
+                    <div class="studio-item">🖼️ 슬라이드 자료 초안</div>
+                    <div class="studio-item">📹 동영상 개요 (유튜브)</div>
+                    <div class="studio-item">🌳 마인드맵 설계</div>
+                    <div class="studio-item">📄 전문 보고서 작성</div>
+                    <div class="studio-item">🃏 학습용 플래시카드</div>
+                    <div class="studio-item">❓ 맞춤형 퀴즈 생성</div>
+                    <div class="studio-item">📊 인포그래픽 구상</div>
+                    <div class="studio-item">📁 핵심 데이터 표</div>
+                </div>
+            </div>
+
+            <!-- 시나리오 A -->
+            <div class="bg-blue-50 p-8 rounded-2xl mb-8 border border-blue-100 shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-bold flex items-center text-blue-800">
+                        🚀 시나리오 A: 상위 2% 실력의 '과학 놀이터' 빌드업
+                    </h3>
+                    <span class="text-xs bg-blue-200 text-blue-800 px-2 py-1 rounded">상급자용</span>
+                </div>
+                
+                <div class="space-y-12">
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">1단계: 나만의 '과학 교육 디렉터' 설정 (Persona)</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_a_1')">복사</button>
+                            <code id="scen_a_1" class="text-sm block whitespace-pre-wrap">너는 15년 차 초등 과학 교육 전문가이자 아동 발달 심리 전문가야. 1~3학년 아이들이 안전하게 실험하면서도 과학적 사고(Critical Thinking)를 기를 수 있도록 돕는 디렉터 역할을 해줘. 답변은 항상 교육적 목표와 재료비 효율성(인당 5.2만 원)을 고려해 전문적으로 분석해줘.</code>
+                        </div>
+                    </div>
+
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">2단계: 딥 리서치 및 최신 트렌드 수집</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_a_2')">복사</button>
+                            <code id="scen_a_2" class="text-sm block whitespace-pre-wrap">2026년 하반기 인기 초등 과학 실험 키트 및 재료 단가 리스트를 리서치해줘. 특히 초등학생이 열광할 만한 대중문화 연계 실험 주제를 수집해줘. 수집된 소스 중 재료비가 적절하고 교육적 효과가 입증된 것에 '!!'를 붙여 상단 배치해줘.</code>
+                        </div>
+                    </div>
+
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">3단계: 입체적 분석 (Multimodal Strategy)</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_a_3')">복사</button>
+                            <code id="scen_a_3" class="text-sm block whitespace-pre-wrap">1학기 계획서와 유튜브 영상을 분석해서, 13주차에 진행할 'AI 로봇 코딩' 수업의 구체적인 가이드라인을 짜줘. 초보 강사도 따라 할 수 있을 만큼 상세해야 하며, 과학 안전 관리 지침 PDF의 내용을 반드시 반영해줘.</code>
+                        </div>
+                    </div>
+
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">4단계: 학부모용 '안내서' 완성 (Polishing)</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_a_4')">복사</button>
+                            <code id="scen_a_4" class="text-sm block whitespace-pre-wrap">이 계획서를 기반으로 학부모님용 '2학기 심화 과학 놀이터 안내서'를 만들어줘. 1~3학년 수준에 맞춰 용어를 순화하고, 디자인은 파스텔톤의 신뢰감 있는 스타일로 구성해줘. 마지막에는 "수정 가능한 PPT 파일로 저장해 줘"라고 요청할 거야.</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-6 rounded-xl border border-blue-200 shadow-inner">
+                    <h5 class="font-bold text-blue-700 mb-2">💡 강사님을 위한 상위 2% 팁: 오디오 브리핑</h5>
+                    <p class="text-xs text-gray-700 leading-relaxed">
+                        첫 수업 전, NotebookLM의 <strong>'오디오 오버뷰'</strong> 기능을 통해 "호기심 많은 학부모와 과학 전문가의 토론" 파일을 생성해 보세요. <br>
+                        이 파일을 학부모 단톡방에 올리면 <span class="font-semibold text-blue-600 text-sm">"최첨단 교육을 하는 전문 강사"</span>라는 인식을 확실히 심어줄 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-purple-50 p-8 rounded-2xl mb-12 border border-purple-100 shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-bold flex items-center text-purple-800 font-sans">
+                        🎨 시나리오 B: 상위 2% 실력의 '놀이아트' 통합 전략
+                    </h3>
+                    <span class="text-xs bg-purple-200 text-purple-800 px-2 py-1 rounded">상급자용</span>
+                </div>
+                
+                <div class="space-y-12">
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">1단계: 나만의 '아트 교육 기서' 설정 (Persona)</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_b_1_new')">복사</button>
+                            <code id="scen_b_1_new" class="text-sm block whitespace-pre-wrap">너는 15년 경력의 창의력 교육 전문가이자 아동 미술 프로그램 디렉터야. 초등 1~3학년의 발달 단계를 고려하여, 단순한 만들기를 넘어 예술적 감수성과 소근육 발달을 극대화할 수 있는 전략적 커리큘럼을 설계해 줘. 모든 제안은 1인당 80,000원의 예산을 효율적으로 사용하는 관점에서 분석해 줘.</code>
+                        </div>
+                    </div>
+
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">2단계: 스마트 자료 수집 및 예산 검증</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_b_2_new')">복사</button>
+                            <code id="scen_b_2_new" class="text-sm block whitespace-pre-wrap">2026년 하반기 초등 저학년 인기 DIY 키트 및 업사이클링 아트 트렌드를 조사하고, 추석/크리스마스 시즌 고퀄리티 재료 중심으로 수집해줘. 수집된 13개 회차의 예상 재료비를 표로 정리하고, 1학기 남은 재고를 활용해 비용을 절감하는 방안도 함께 제시해 줘.</code>
+                        </div>
+                    </div>
+
+                    <div class="scenario-step">
+                        <h4 class="font-bold text-lg text-gray-900">3단계: 멀티모달 통합 및 입체적 분석</h4>
+                        <div class="prompt-box">
+                            <button class="copy-btn" onclick="copyText('scen_b_3_new')">복사</button>
+                            <code id="scen_b_3_new" class="text-sm block whitespace-pre-wrap">1학기 계획서의 흐름을 유지하되, 유튜브에서 본 최신 에폭시 아트 기법을 2학기 '에폭시 탁상거울' 수업에 접목해 줘. 아동 미술 안전 가이드라인에 따른 주의사항도 함께 정리해서 아이들용 안내문을 만들어 줘.</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-white p-5 rounded-xl border border-purple-200">
+                    <p class="text-sm text-gray-700">
+                        <span class="font-bold text-purple-700">💡 전문가 팁:</span> 1학기 계획서 <strong>재고 목록</strong>을 함께 업로드하면, <span class="bg-yellow-100 px-1">"남은 재료를 재활용하면서도 새로운 결과물을 만드는 법"</span>까지 가이드해 줍니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Sharing -->
+        <section id="sharing" class="mb-24">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm font-mono">5</span>
+                실습 결과 공유 및 소통
+            </h2>
+            <div class="bg-indigo-600 p-8 rounded-2xl text-white text-center shadow-xl">
+                <h3 class="text-2xl font-bold mb-4">오늘의 결과물을 자랑해 주세요!</h3>
+                <p class="mb-8 opacity-90 leading-relaxed">다른 강사님들의 기발한 프롬프트와 결과물을 보며<br>서로의 노하우를 공유해 보세요.</p>
+                <a href="https://padlet.com/gropeforway/ai-ow9xzgd06m1tmp4l" target="_blank" class="inline-block bg-white text-indigo-700 font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform shadow-lg">
+                    공유 패들렛(Padlet)으로 이동
+                </a>
+            </div>
+        </section>
+
+        <footer class="border-t pt-8 text-center text-gray-400 text-sm mb-12">
+            © 2025 강릉교육문화회관 강사 역량 강화 특강 | 본 자료는 교육용으로만 사용 가능합니다.
+        </footer>
+    </main>
+
+    <script>
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
