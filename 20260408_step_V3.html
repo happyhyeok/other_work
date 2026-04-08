@@ -88,6 +88,7 @@
                     <ul class="ml-3 space-y-2 text-gray-600 border-l-2 border-gray-100 pl-3">
                         <li><a href="#part1-step1" class="hover:text-blue-600 transition-colors">실습 1. 슈퍼 프롬프트</a></li>
                         <li><a href="#part1-step2" class="hover:text-blue-600 transition-colors">실습 2. 행사 기획</a></li>
+                        <li><a href="#part1-step3" class="hover:text-blue-600 transition-colors font-semibold">실습 3. 반복업무 자동화</a></li>
                     </ul>
                 </li>
                 <li>
@@ -168,6 +169,68 @@
                                         <li>
                                             <strong>불필요한 소스 제거:</strong> 채팅창에 아래 프롬프트 입력하여 부실한 소스 평가 및 확인
                                             
+                                            <!-- Prompt Box -->
+                                            <div class="relative group mt-3 rounded-lg bg-gray-900 overflow-hidden shadow-inner border border-gray-700 w-full">
+                                                <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                                                    <span class="text-xs font-semibold text-gray-400">프롬프트</span>
+                                                    <button onclick="copyPrompt(this)" class="flex items-center text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600 px-2 py-1 rounded transition-colors">
+                                                        <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>복사
+                                                    </button>
+                                                </div>
+                                                <div class="p-4 overflow-x-auto">
+                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap leading-relaxed">[소스 종합 평가표]
+| 소스명 | 핵심 요약 | 발행일 | 저자명/소속 | 소스 구분 | 신뢰도 | 참고가치 점수 |
+
+[작성기준]
+핵심요약: 30자 이내, 한줄로 작성
+소스 구분: 1차 자료(원자료·공식 발표·직접 연구) / 2차 분석(해설·요약·분석) / 의견·칼럼
+신뢰도: "★★★☆☆" 형식 점수로 구분 (5점: 공신력 있는 자료 ~ 1점: 출처 불명확·주관적)
+참고가치: 1~10점 (10점: 핵심 근거로 직접 인용 가능 ~ 1점: 참고 가치 낮음)</code>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <strong>주제별 소스 분류:</strong> 아래 프롬프트를 입력하여 지식 베이스 체계화
+
+                                            <!-- Prompt Box -->
+                                            <div class="relative group mt-3 rounded-lg bg-gray-900 overflow-hidden shadow-inner border border-gray-700 w-full">
+                                                <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                                                    <span class="text-xs font-semibold text-gray-400">프롬프트</span>
+                                                    <button onclick="copyPrompt(this)" class="flex items-center text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600 px-2 py-1 rounded transition-colors">
+                                                        <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>복사
+                                                    </button>
+                                                </div>
+                                                <div class="p-4 overflow-x-auto">
+                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap leading-relaxed">이 노트북에 포함된 모든 소스를 면밀히 검토하여,
+가장 비중있게 다뤄진 주제·관점 5가지를 선정하세요.
+각 주제별로 가장 풍부하게 다룬 소스 1개를 선정해 아래 표로 정리하세요.
+
+[주제별 대표 소스]
+| 순위 | 핵심 주제 / 주요 관점 | 대표 소스 | 선정 근거 |
+
+[작성기준]
+순위는 소스 전체에서의 언급 빈도와 서술 비중을 기준으로 매깁니다.
+선정 근거는 해당 소스의 표현·논조·주장 방식을 직접 근거로 작성하세요.
+외부 지식과 개인적 해석은 포함하지 마세요.
+
+소스에서 확인되지 않는 내용은 **"명시되지 않음"**으로 표기하세요.</code>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">3</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">슈퍼 프롬프트(지침) 추출</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-4 mt-2 ml-1">
+                                        <li>
+                                            <strong>지침 생성 요청:</strong> 아래 명령을 통해 궁극적인 시스템 지침 추출
+
                                             <!-- Prompt Box -->
                                             <div class="relative group mt-3 rounded-lg bg-gray-900 overflow-hidden shadow-inner border border-gray-700 w-full">
                                                 <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
@@ -304,6 +367,168 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- 실습 3 (새로 추가됨) -->
+                    <div id="part1-step3" class="mt-14">
+                        <h3 class="text-xl font-bold text-violet-700 border-b-2 border-violet-100 pb-2 mb-4 flex items-center gap-2">
+                            <span class="bg-violet-100 text-violet-800 text-sm py-1 px-3 rounded-full">실습 3</span>
+                            반복업무 자동화: 분류 배정 보조 로봇(Gems) 만들기
+                        </h3>
+                        <p class="text-gray-600 mb-6 bg-gray-50 p-4 rounded-lg font-medium">
+                            🎯 <strong>목표:</strong> 구글 제미나이(Gemini)의 맞춤형 AI 비서 기능인 'Gems'를 활용하여 도서의 <strong>KDC/DDC 청구기호를 자동 배정</strong>해주는 나만의 사서 비서를 구축합니다.
+                        </p>
+
+                        <div class="space-y-8">
+                            <!-- Step 1 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">1</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">Gems 생성 메뉴 접속하기</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-2 mt-2 ml-1">
+                                        <li><strong>제미나이 접속:</strong> 제미나이 홈페이지(gemini.google.com)에 접속합니다.</li>
+                                        <li><strong>Gems 탐색:</strong> 좌측 사이드바 메뉴에서 'Gems 탐색하기'(또는 'Gem 관리자')를 클릭합니다.</li>
+                                        <li><strong>새 Gem 생성:</strong> 화면 우측 상단이나 목록에 있는 <strong>'+ 새 Gem(New Gem)'</strong> 버튼을 클릭하여 창을 엽니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">2</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">기본 정보(이름 및 설명) 설정</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-2 mt-2 ml-1">
+                                        <li><strong>이름:</strong> 직관적이고 목적이 명확한 이름을 지어줍니다. (예: <code class="bg-violet-100 px-1 py-0.5 rounded text-violet-700">KDC/DDC 청구기호 배정 마스터</code> 또는 <code class="bg-violet-100 px-1 py-0.5 rounded text-violet-700">도서 분류 전문 사서</code>)</li>
+                                        <li><strong>설명:</strong> 이 잼이 어떤 역할을 하는지 핵심 내용을 적습니다. (예: "도서의 서지 정보(제목, 목차, 소개 등)를 바탕으로 KDC 및 DDC 분류 번호를 정확하게 배정해 주는 AI 사서 비서입니다.")</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">3</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">요청 사항(지침/Instructions) 작성하기</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-4 mt-2 ml-1">
+                                        <li>
+                                            <strong>프롬프트 입력:</strong> 가장 중요한 단계로 AI의 역할(Role), 작업(Task), 형식(Format), 톤앤매너 등을 지정합니다. 아래 프롬프트를 복사하여 '요청 사항' 란에 붙여넣습니다.
+
+                                            <!-- Prompt Box -->
+                                            <div class="relative group mt-3 rounded-lg bg-gray-900 overflow-hidden shadow-inner border border-gray-700 w-full">
+                                                <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                                                    <span class="text-xs font-semibold text-gray-400">프롬프트</span>
+                                                    <button onclick="copyPrompt(this)" class="flex items-center text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600 px-2 py-1 rounded transition-colors">
+                                                        <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>복사
+                                                    </button>
+                                                </div>
+                                                <div class="p-4 overflow-x-auto">
+                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap leading-relaxed">&lt;role&gt;
+당신은 한국십진분류법(KDC) 및 듀이십진분류법(DDC)에 능통한 10년 경력의 수석 사서입니다.
+&lt;/role&gt;
+
+&lt;objective&gt;
+아래에 제공된 신간 도서의 정보를 분석하여, 가장 적합한 KDC 및 DDC 분류 기호와 그 추천 사유를 제시해 주세요.
+&lt;/objective&gt;
+
+&lt;instructions&gt;
+1. 도서의 주제를 분석할 때 어떤 융복합적 요소가 있는지 파악하세요.
+2. &lt;thought&gt; 태그 안에서 책의 핵심 주제가 무엇인지, 분류 규정에 따라 어떤 카테고리가 최우선이 되어야 하는지 단계별로 추론하세요.
+3. 최종적으로 도출된 KDC와 DDC 기호를 명확하게 제시하세요.
+&lt;/instructions&gt;
+
+&lt;book_info&gt;
+- 제목: [도서 제목 입력]
+- 서문 및 출판사 서평: [서문/서평 입력]
+- 목차: [주요 목차 입력]
+&lt;/book_info&gt;
+
+&lt;output_format&gt;
+결과는 다음 JSON 형식으로만 출력해 주세요:
+{
+  "도서명": "",
+  "주요_주제_요약": "",
+  "추천_KDC_기호": "",
+  "추천_DDC_기호": "",
+  "분류_결정_사유": ""
+}
+&lt;/output_format&gt;</code>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">4</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">프롬프트 자동 업그레이드 (수정 펜 활용)</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-2 mt-2 ml-1">
+                                        <li>요청 사항 입력란 상단(또는 하단)에 있는 <strong>'연필(수정) 아이콘'</strong>을 클릭합니다.</li>
+                                        <li>제미나이가 입력된 지침을 바탕으로 부족한 부분을 보강하고, 더 정교한 학술적 문구의 '슈퍼 프롬프트'로 자동 완성 및 최적화해 줍니다. 수정된 내용을 확인하고 마음에 들면 그대로 적용합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 5 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">5</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">지식(Knowledge) 파일 업로드 (전문성 부여)</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-3 mt-2 ml-1">
+                                        <li>일반적인 AI가 아닌 '나만의 전문 로봇'으로 만들기 위해 화면의 '지식(Knowledge)' 섹션에서 '파일 업로드' 또는 <strong>'드라이브 파일 추가'</strong>를 클릭합니다.</li>
+                                        <li>KDC/DDC 분류 규정집 PDF, 국립중앙도서관 분류 지침 매뉴얼, 혹은 기존에 도서관에서 배정했던 도서들의 분류 데이터(엑셀, 문서 등)를 최대 10개까지 업로드합니다.</li>
+                                        <li>
+                                            <span class="inline-block bg-violet-100 text-violet-800 text-xs font-bold px-2 py-1 rounded mt-1 mb-1">꿀팁</span><br>
+                                            요청 사항에 <em>"반드시 제공된 파일(지식)의 분류 기준과 규정에만 근거해서 대답해"</em>라는 문구를 추가하면 환각(할루시네이션)을 방지하고 정확도를 극대화할 수 있습니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 6 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">6</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">미리보기 테스트 및 저장</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-4 mt-2 ml-1">
+                                        <li>
+                                            화면 오른쪽에 위치한 '미리보기(Preview)' 창에서 설정한 잼이 잘 작동하는지 테스트해 봅니다.
+                                            <!-- Prompt Box -->
+                                            <div class="relative group mt-3 rounded-lg bg-gray-900 overflow-hidden shadow-inner border border-gray-700 w-full">
+                                                <div class="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                                                    <span class="text-xs font-semibold text-gray-400">테스트 예시 입력</span>
+                                                    <button onclick="copyPrompt(this)" class="flex items-center text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600 px-2 py-1 rounded transition-colors">
+                                                        <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>복사
+                                                    </button>
+                                                </div>
+                                                <div class="p-4 overflow-x-auto">
+                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap">도서명: 이기적 유전자, 저자: 리처드 도킨스, 목차: 사람과 기계, 이기적인 유전자... 이 책의 KDC와 DDC를 배정해 줘.</code>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>결과물이 원하는 형식과 품질로 나오는지 확인 후, 만족스럽다면 <strong>'저장'</strong> 버튼을 클릭합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 7 -->
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-violet-600 text-white flex items-center justify-center font-bold">7</div>
+                                <div class="w-full min-w-0">
+                                    <h4 class="text-lg font-bold text-gray-900 mb-1">고정 및 실무 활용</h4>
+                                    <ul class="list-disc list-inside text-gray-700 space-y-2 mt-2 ml-1">
+                                        <li>저장이 완료되면 왼쪽 메뉴 'Gems' 목록에 내가 만든 보조 로봇이 생성됩니다.</li>
+                                        <li>해당 잼 옆의 점 세 개(···) 버튼을 눌러 <strong>'고정(Pin)'</strong>을 선택하면 항상 상단에 노출되어 업무 시 빠르게 접속할 수 있습니다.</li>
+                                        <li>팀원이나 다른 사서들과 함께 사용하고 싶다면 <strong>'공유'</strong> 기능을 통해 링크를 전달하여 일관된 분류 작업을 수행할 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- 실습 3 끝 -->
 
                     <!-- Tip Box -->
                     <div class="mt-10 bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg shadow-sm">
