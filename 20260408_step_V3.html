@@ -71,7 +71,8 @@
             </div>
             <nav class="hidden md:flex gap-4 text-sm font-medium text-gray-600">
                 <a href="#part1" class="hover:text-blue-600 transition">Part 1. 기획안 작성</a>
-                <a href="#part2" class="hover:text-blue-600 transition">Part 2. AI로 한글문서 변환하기</a>
+                <a href="#part2" class="hover:text-violet-600 transition">Part 2. 반복업무 자동화</a>
+                <a href="#part3" class="hover:text-indigo-600 transition">Part 3. 한글문서 변환</a>
             </nav>
         </div>
     </header>
@@ -88,15 +89,20 @@
                     <ul class="ml-3 space-y-2 text-gray-600 border-l-2 border-gray-100 pl-3">
                         <li><a href="#part1-step1" class="hover:text-blue-600 transition-colors">실습 1. 슈퍼 프롬프트</a></li>
                         <li><a href="#part1-step2" class="hover:text-blue-600 transition-colors">실습 2. 행사 기획</a></li>
-                        <li><a href="#part1-step3" class="hover:text-blue-600 transition-colors font-semibold">실습 3. 반복업무 자동화</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#part2" class="font-bold text-indigo-700 hover:text-indigo-900 block mb-2 mt-5">Part 2. AI로 한글문서 변환하기</a>
+                    <a href="#part2" class="font-bold text-violet-700 hover:text-violet-900 block mb-2 mt-5">Part 2. 반복업무 자동화</a>
                     <ul class="ml-3 space-y-2 text-gray-600 border-l-2 border-gray-100 pl-3">
-                        <li><a href="#part2-step1" class="hover:text-indigo-600 transition-colors">1단계: 스킬/양식 준비</a></li>
-                        <li><a href="#part2-step2" class="hover:text-indigo-600 transition-colors">2단계: 환경 설정</a></li>
-                        <li><a href="#part2-step3" class="hover:text-indigo-600 transition-colors">3단계: 문서 생성 실습</a></li>
+                        <li><a href="#part2-step1" class="hover:text-violet-600 transition-colors">실습. 분류 배정 로봇 만들기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#part3" class="font-bold text-indigo-700 hover:text-indigo-900 block mb-2 mt-5">Part 3. AI로 한글문서 변환하기</a>
+                    <ul class="ml-3 space-y-2 text-gray-600 border-l-2 border-gray-100 pl-3">
+                        <li><a href="#part3-step1" class="hover:text-indigo-600 transition-colors">1단계: 스킬/양식 준비</a></li>
+                        <li><a href="#part3-step2" class="hover:text-indigo-600 transition-colors">2단계: 환경 설정</a></li>
+                        <li><a href="#part3-step3" class="hover:text-indigo-600 transition-colors">3단계: 문서 생성 실습</a></li>
                     </ul>
                 </li>
             </ul>
@@ -114,7 +120,7 @@
             </div>
 
             <!-- ==========================================
-                 PART 1: NotebookLM
+                 PART 1: 기획안 작성 (NotebookLM)
                  ========================================== -->
             <section id="part1" class="mb-20">
                 <div class="flex items-center gap-3 mb-6">
@@ -136,7 +142,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
 
                     <!-- 실습 1 -->
                     <div id="part1-step1" class="mb-10">
@@ -314,7 +320,16 @@
                                                     </button>
                                                 </div>
                                                 <div class="p-4 overflow-x-auto">
-                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap">여름방학 도서관 행사 기획을 위한 10장 분량의 슬라이드 목차를 짜줘. 각 장에는 구체적인 인사이트와 배치될 이미지 컨셉이 포함되어야 해</code>
+                                                    <code class="text-green-400 font-mono text-sm whitespace-pre-wrap leading-relaxed">역할 (Role): 당신은 도서관 정책 및 교육 프로그램 기획 분야에서 15년 이상 활동한 '시니어 도서관 기획자'이자 '전문 프레젠테이션 디렉터'입니다.
+맥락 (Context): 우리는 앞서 논의한 도서관 정책(예: 지식 상생 리빙랩 등)과 기존에 만들어진 자료를 바탕으로, 초중고 학생 및 가족 단위를 타깃으로 한 '여름방학 도서관 행사 기획안' 발표를 준비하고 있습니다.
+목표 (Objective): 의사결정권자(지자체장 및 도서관장)를 완벽하게 설득할 수 있는 총 10장 분량의 프레젠테이션 슬라이드 목차(Deck Outline)를 기획하는 것입니다.
+세부 지시사항 (Instructions & Steps):
+전체 슬라이드의 흐름은 '도입(배경 및 필요성) -> 본론(핵심 프로그램 및 참여 유도 방안) -> 결론(예산, 일정, 기대효과)'의 논리적인 기승전결을 갖추도록 구성하세요.
+각 슬라이드(1장~10장)마다 다음 세 가지 요소를 반드시 상세하게 작성해 주세요:
+슬라이드 제목: 해당 장의 핵심을 찌르는 간결하고 후킹(Hooking)한 제목
+구체적인 인사이트 (Key Message): 이 장에서 청중을 설득하기 위해 던져야 할 핵심 메시지, 기대 효과, 또는 기획의 근거(데이터)
+배치될 이미지 컨셉 (Image Concept): 청중의 시각적 이해를 돕기 위해 슬라이드 배경이나 우측에 들어갈 이미지의 상세 묘사 (예: AI 이미지 생성기인 미드저니에 바로 입력할 수 있을 만큼 구체적인 분위기, 구도, 요소 등 묘사)
+출력 형식 (Format): 결과물은 마크다운 문법을 활용하여, [슬라이드 번호 | 제목 | 구체적인 인사이트 | 배치될 이미지 컨셉] 형태의 표(Table) 형식으로 구조화하여 한눈에 보기 좋게 출력해 주세요.</code>
                                                 </div>
                                             </div>
 
@@ -368,14 +383,53 @@
                         </div>
                     </div>
 
-                    <!-- 실습 3 (새로 추가됨) -->
-                    <div id="part1-step3" class="mt-14">
+                    <!-- Tip Box -->
+                    <div class="mt-10 bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg shadow-sm">
+                        <h4 class="text-amber-800 font-bold flex items-center gap-2 mb-2">
+                            <span>💡</span> 실습 팁 (Part 1)
+                        </h4>
+                        <ul class="text-amber-900 space-y-2 list-disc list-inside text-sm md:text-base">
+                            <li>실습 1의 목적은 <strong>'도구(프롬프트)'</strong>를 만드는 것이고, 실습 2의 목적은 그 도구를 사용해 <strong>'결과물(기획안)'</strong>을 만드는 것입니다.</li>
+                            <li>슈퍼 프롬프트는 AI가 이해하기 쉬운 구조적 언어로 되어 있으므로, 사람이 읽기에 너무 길더라도 수정하지 않고 그대로 사용하는 것이 가장 효과적입니다.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 PART 2: 반복업무 자동화 (Gems)
+                 ========================================== -->
+            <section id="part2" class="mb-20">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="bg-violet-600 text-white p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Part 2. 반복업무 자동화</h2>
+                </div>
+                
+                <!-- Gems 소개 -->
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-6 mb-8">
+                    <h3 class="text-xl font-bold text-violet-900 mb-2 flex items-center gap-2">
+                        <span>💡</span> 구글 제미나이 Gems란?
+                    </h3>
+                    <p class="text-violet-800 mb-4 leading-relaxed">Gems는 구글 제미나이에서 제공하는 <strong>'맞춤형 AI 비서 생성 기능'</strong>입니다. 반복되는 특정 업무를 학습시켜 나만의 로봇으로 만들 수 있습니다.</p>
+                    <div class="bg-white rounded-lg p-4 shadow-sm text-sm text-gray-700 leading-relaxed border border-violet-50">
+                        <strong class="text-violet-700 text-base block mb-1">왜 Gems를 사용해야 하나요?</strong>
+                        매번 새로운 채팅창을 열어 "너는 사서야, 이걸 이렇게 해줘..."라고 길게 명령할 필요 없이, <strong>한 번만 완벽하게 세팅해두면</strong> 언제든 클릭 한 번으로 전문가 수준의 답변과 결과물을 일관되게 얻을 수 있어 업무 속도가 비약적으로 향상됩니다.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
+
+                    <!-- 실습 -->
+                    <div id="part2-step1" class="mb-10">
                         <h3 class="text-xl font-bold text-violet-700 border-b-2 border-violet-100 pb-2 mb-4 flex items-center gap-2">
-                            <span class="bg-violet-100 text-violet-800 text-sm py-1 px-3 rounded-full">실습 3</span>
-                            반복업무 자동화: 분류 배정 보조 로봇(Gems) 만들기
+                            <span class="bg-violet-100 text-violet-800 text-sm py-1 px-3 rounded-full">실습</span>
+                            분류 배정 보조 로봇(Gems) 만들기
                         </h3>
                         <p class="text-gray-600 mb-6 bg-gray-50 p-4 rounded-lg font-medium">
-                            🎯 <strong>목표:</strong> 구글 제미나이(Gemini)의 맞춤형 AI 비서 기능인 'Gems'를 활용하여 도서의 <strong>KDC/DDC 청구기호를 자동 배정</strong>해주는 나만의 사서 비서를 구축합니다.
+                            🎯 <strong>목표:</strong> 도서의 <strong>KDC/DDC 청구기호를 자동 배정</strong>해주는 나만의 사서 비서를 구축합니다.
                         </p>
 
                         <div class="space-y-8">
@@ -528,31 +582,19 @@
 
                         </div>
                     </div>
-                    <!-- 실습 3 끝 -->
-
-                    <!-- Tip Box -->
-                    <div class="mt-10 bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-lg shadow-sm">
-                        <h4 class="text-amber-800 font-bold flex items-center gap-2 mb-2">
-                            <span>💡</span> 실습 팁
-                        </h4>
-                        <ul class="text-amber-900 space-y-2 list-disc list-inside text-sm md:text-base">
-                            <li>실습 1의 목적은 <strong>'도구(프롬프트)'</strong>를 만드는 것이고, 실습 2의 목적은 그 도구를 사용해 <strong>'결과물(기획안)'</strong>을 만드는 것입니다.</li>
-                            <li>슈퍼 프롬프트는 AI가 이해하기 쉬운 구조적 언어로 되어 있으므로, 사람이 읽기에 너무 길더라도 수정하지 않고 그대로 사용하는 것이 가장 효과적입니다.</li>
-                        </ul>
-                    </div>
 
                 </div>
             </section>
 
             <!-- ==========================================
-                 PART 2: Claude
+                 PART 3: AI로 한글문서 변환하기 (Claude)
                  ========================================== -->
-            <section id="part2" class="mb-20">
+            <section id="part3" class="mb-20">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="bg-indigo-600 text-white p-2 rounded-lg">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     </div>
-                    <h2 class="text-3xl font-bold text-gray-900">Part 2. AI로 한글문서 변환하기</h2>
+                    <h2 class="text-3xl font-bold text-gray-900">Part 3. AI로 한글문서 변환하기</h2>
                 </div>
 
                 <!-- 스킬 및 HWPX 소개 -->
@@ -582,7 +624,7 @@
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
                     
                     <!-- 1단계 -->
-                    <div id="part2-step1" class="mb-10">
+                    <div id="part3-step1" class="mb-10">
                         <div class="inline-block bg-indigo-100 text-indigo-800 font-bold px-4 py-2 rounded-lg mb-4">
                             1단계: 스킬 파일 및 양식 준비
                         </div>
@@ -623,7 +665,7 @@
                     </div>
 
                     <!-- 2단계 -->
-                    <div id="part2-step2" class="mb-10">
+                    <div id="part3-step2" class="mb-10">
                         <div class="inline-block bg-indigo-100 text-indigo-800 font-bold px-4 py-2 rounded-lg mb-4">
                             2단계: 클로드 환경 설정
                         </div>
@@ -641,7 +683,7 @@
                     </div>
 
                     <!-- 3단계 -->
-                    <div id="part2-step3" class="mb-10">
+                    <div id="part3-step3" class="mb-10">
                         <div class="inline-block bg-indigo-100 text-indigo-800 font-bold px-4 py-2 rounded-lg mb-4">
                             3단계: 문서 생성 실습
                         </div>
@@ -668,7 +710,7 @@
                                                 <span class="text-xs font-semibold text-gray-400">프롬프트</span>
                                                 <button onclick="copyPrompt(this)" class="flex items-center text-xs font-medium text-gray-300 bg-gray-700 hover:bg-gray-600 border border-gray-600 px-2 py-1 rounded transition-colors">
                                                     <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>복사
-                                                </button>
+                                                    </button>
                                             </div>
                                             <div class="p-4 overflow-x-auto">
                                                 <code class="text-green-400 font-mono text-sm whitespace-pre-wrap leading-relaxed">업로드한 엑셀 파일의 데이터를 바탕으로, 내장된 HWPX 스킬 템플릿을 사용하여 한글 문서를 만들어줘. 엑셀의 '이름'은 {{이름}} 위치에, '주소'는 {{주소}} 위치에 {{기관명}}위치에는 '강릉교육문화관'text를 {{기관주소}}위치에는 '강원특별자치도 강릉시 노암등길 37-1 (노암동)'text를 대입해줘.</code>
@@ -716,3 +758,4 @@
 
 </body>
 </html>
+```
