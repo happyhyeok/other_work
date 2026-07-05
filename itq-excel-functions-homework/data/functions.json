@@ -1,0 +1,602 @@
+[
+  {
+    "id": "001",
+    "name": "YEAR",
+    "displayName": "001_YEAR",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1lZN7yHCcmiRE65D8vk8MwsUEQbxHPtDJ/view"
+  },
+  {
+    "id": "002",
+    "name": "DAY",
+    "displayName": "002_DAY",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1kjYOiFxW5gRqwPZXXCP4KsJIRIFXMSwy/view"
+  },
+  {
+    "id": "003",
+    "name": "MONTH",
+    "displayName": "003_MONTH",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1qNqUE-LobhzFoRlMmt2FrjI77rmkZmQx/view"
+  },
+  {
+    "id": "004",
+    "name": "TODAY",
+    "displayName": "004_TODAY",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1rou-ZfLn39mq-eTJYkOKYIjCeZqYnaGK/view"
+  },
+  {
+    "id": "005",
+    "name": "DATE",
+    "displayName": "005_DATE",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1r-fyLyXezQX4mx_wp5ztlD6V3_OxAraQ/view"
+  },
+  {
+    "id": "006",
+    "name": "WEEKDAY",
+    "displayName": "006_WEEKDAY",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1kAr8CFKlZOVlqZgi51LPV8GWoFhxZkWj/view"
+  },
+  {
+    "id": "007",
+    "name": "HOUR",
+    "displayName": "007_HOUR",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/18iRCmR3D_2EKM10Bap7jtxvdF6dF9U2s/view"
+  },
+  {
+    "id": "008",
+    "name": "MINUTE",
+    "displayName": "008_MINUTE",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1tpQQAKhJfgQyHTUNXjUygYQiMfbFwq4l/view"
+  },
+  {
+    "id": "009",
+    "name": "SECOND",
+    "displayName": "009_SECOND",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1_x5_hLc8Z7ICX8tejRlHDKkrikfhYt-O/view"
+  },
+  {
+    "id": "010",
+    "name": "TIME",
+    "displayName": "010_TIME",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1H-KLJuT1_xv81dLQSUogG4vLf7dLikox/view"
+  },
+  {
+    "id": "011",
+    "name": "NOW",
+    "displayName": "011_NOW",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1sApPwxRXJAOkHUY69ZpoQ5vKUx92Dq_J/view"
+  },
+  {
+    "id": "012",
+    "name": "IF",
+    "displayName": "012_IF",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1wFgc6YaVf85agPCtJw2N42p_nCQtj3ot/view"
+  },
+  {
+    "id": "013",
+    "name": "AND",
+    "displayName": "013_AND",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1UQ3Szpoatw-cd2Ynq1jKmSedyaPM-HWU/view"
+  },
+  {
+    "id": "014",
+    "name": "OR",
+    "displayName": "014_OR",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1foUtRFkHFmKBljssbwK7HvQI6bla_DnR/view"
+  },
+  {
+    "id": "015",
+    "name": "NOT",
+    "displayName": "015_NOT",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1UWky7klEoB6tOw269Y5uQfinaAuyGcWm/view"
+  },
+  {
+    "id": "016",
+    "name": "TRUE",
+    "displayName": "016_TRUE",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1_v8pXsK0rd1ULdSMk_U0Kz0Ydxv0M6wz/view"
+  },
+  {
+    "id": "017",
+    "name": "FALSE",
+    "displayName": "017_FALSE",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1m8LiPZNJHg9Y6tJUILlEomSyzNcAily4/view"
+  },
+  {
+    "id": "018",
+    "name": "DCOUNTA",
+    "displayName": "018_DCOUNTA",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/11teuXIyIxA7cZo4HiMc4Do8EeexVgNQr/view"
+  },
+  {
+    "id": "019",
+    "name": "DAVERAGE",
+    "displayName": "019_DAVERAGE",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1A7kPlAfwGXnsdjZVPsYOkbgRvWSpi-ml/view"
+  },
+  {
+    "id": "020",
+    "name": "DSUM",
+    "displayName": "020_DSUM",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1IorPkIGpivAcC91F0D2AOrs3EkeFUPXQ/view"
+  },
+  {
+    "id": "021",
+    "name": "DMIN",
+    "displayName": "021_DMIN",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1_0k73vf3YE0lIs2gVKEjREKwToXNCTQJ/view"
+  },
+  {
+    "id": "022",
+    "name": "DMAX",
+    "displayName": "022_DMAX",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1xOezSUr1ynMQyuFGZEZgJsjVdSW3wqAX/view"
+  },
+  {
+    "id": "023",
+    "name": "DCOUNT",
+    "displayName": "023_DCOUNT",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/10TwOBi2gGBRZnEXBHQSKsKZpm9rWr69y/view"
+  },
+  {
+    "id": "024",
+    "name": "DGET",
+    "displayName": "024_DGET",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1d2FW8_D5f0MCTR-xYn86byvClkXDGsZu/view"
+  },
+  {
+    "id": "025",
+    "name": "DPRODUCT",
+    "displayName": "025_DPRODUCT",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1vC6opIlR6Av4BvhNxD6LuZjM8-8fzvlD/view"
+  },
+  {
+    "id": "026",
+    "name": "DSTDEV",
+    "displayName": "026_DSTDEV",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1rRfLFigjqn9RhknpK6yheNYAhFRLdDzc/view"
+  },
+  {
+    "id": "027",
+    "name": "DVAR",
+    "displayName": "027_DVAR",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1-4tDl-skuI-hOB8l5QmN3-BauvFNC7jA/view"
+  },
+  {
+    "id": "028",
+    "name": "SUMIF",
+    "displayName": "028_SUMIF",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1tLiEns4BRs4vC6EjaqVsOl-ZppphopAA/view"
+  },
+  {
+    "id": "029",
+    "name": "SUMPRODUCT",
+    "displayName": "029_SUMPRODUCT",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1WKm9Dc89SCKHeGoABtRhOxC3iRTvECfo/view"
+  },
+  {
+    "id": "030",
+    "name": "SUM",
+    "displayName": "030_SUM",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1t5Mn3ghh6RyTGifGvgUyTzeAROEI5LJm/view"
+  },
+  {
+    "id": "031",
+    "name": "INT",
+    "displayName": "031_INT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1Q9RKumsZKVaeh5JlYzlNXJF6zLqkAu7N/view"
+  },
+  {
+    "id": "032",
+    "name": "MOD",
+    "displayName": "032_MOD",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1lyWKJf4Kgz50K--CQDr5iRRPZcB1KVd1/view"
+  },
+  {
+    "id": "033",
+    "name": "ROUNDDOWN",
+    "displayName": "033_ROUNDDOWN",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1KEh8-XOI82VfVQNqjA3uVxrQ7-b-sAQ6/view"
+  },
+  {
+    "id": "034",
+    "name": "ROUND",
+    "displayName": "034_ROUND",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1z-wbd6Vgn6CR4IsBPs1pgoukSow2QmAj/view"
+  },
+  {
+    "id": "035",
+    "name": "ROUNDUP",
+    "displayName": "035_ROUNDUP",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1lZ-7ZKROVzlRNcJsoONWoObEBQm-l70W/view"
+  },
+  {
+    "id": "036",
+    "name": "PRODUCT",
+    "displayName": "036_PRODUCT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1ndvc0gQe98An6dJlLZ8q5JVJpVfpQCQD/view"
+  },
+  {
+    "id": "037",
+    "name": "ABS",
+    "displayName": "037_ABS",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/18V_oLATiDlWVgBSHJVUpkEkt8DdaPZ2t/view"
+  },
+  {
+    "id": "038",
+    "name": "PI",
+    "displayName": "038_PI",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1lqYSeQXzKOODS1iv884BlQptr36S6H8K/view"
+  },
+  {
+    "id": "039",
+    "name": "POWER",
+    "displayName": "039_POWER",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1B9DJ-Mcn9jFEauH9CPvkpvCzjtYOrAKz/view"
+  },
+  {
+    "id": "040",
+    "name": "TRUNC",
+    "displayName": "040_TRUNC",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1uMLtEiWiQhN1fXoRhl_G8Fwv1x0nwwdl/view"
+  },
+  {
+    "id": "041",
+    "name": "CEILING.MATH",
+    "displayName": "041_CEILING.MATH",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1CSPjaT9hLfMfTcmKdnKsvaVnW78ZNwwv/view"
+  },
+  {
+    "id": "042",
+    "name": "ODD",
+    "displayName": "042_ODD",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1dnv9nh53VrHIa5cFnf4JY1QrXc_tPjUo/view"
+  },
+  {
+    "id": "043",
+    "name": "ISERROR",
+    "displayName": "043_ISERROR",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/10m5tfHbxF95au_nQxGON6fv5ZkI6yPQk/view"
+  },
+  {
+    "id": "044",
+    "name": "INDEX",
+    "displayName": "044_INDEX",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1zdWzwIJYF0rnfaddul7jedHNGg1I6Lq2/view"
+  },
+  {
+    "id": "045",
+    "name": "MATCH",
+    "displayName": "045_MATCH",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1sYEquQvbGvD8uK-D38CBU0uYOF2fBkIb/view"
+  },
+  {
+    "id": "046",
+    "name": "CHOOSE",
+    "displayName": "046_CHOOSE",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/15hDWFNDsSKbOCoOEQghtiNvDf2pZIKeS/view"
+  },
+  {
+    "id": "047",
+    "name": "VLOOKUP",
+    "displayName": "047_VLOOKUP",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1H6SgZ5Tc934TTdtP-mBNyy35Q3_yWhgA/view"
+  },
+  {
+    "id": "048",
+    "name": "LOOKUP",
+    "displayName": "048_LOOKUP",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1cNuggpBqgC8fm3ItekF6GHQeZraI4478/view"
+  },
+  {
+    "id": "049",
+    "name": "HLOOKUP",
+    "displayName": "049_HLOOKUP",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/155xlXSzLvSePo_q72uKmxKsd4quQo-bj/view"
+  },
+  {
+    "id": "050",
+    "name": "OFFSET",
+    "displayName": "050_OFFSET",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1rn6zGf_2vfFsWvbRI68cIBmSCCMbRCwi/view"
+  },
+  {
+    "id": "051",
+    "name": "TRANSPOSE",
+    "displayName": "051_TRANSPOSE",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/14YpKV2q8nxZ-GL2ShzOKaq7K83SccUGx/view"
+  },
+  {
+    "id": "052",
+    "name": "ADDRESS",
+    "displayName": "052_ADDRESS",
+    "level": "상",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1XHbqgQd6ZldjKtL10yFjOls4TIWBmo-u/view"
+  },
+  {
+    "id": "053",
+    "name": "MID",
+    "displayName": "053_MID",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1YSisO7q4Kw0ktJNeQ3iNOaJEItZDSHgy/view"
+  },
+  {
+    "id": "054",
+    "name": "LEFT",
+    "displayName": "054_LEFT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1H6GMGC3fJ3YOYsGLNxhr290Hp1kraU6d/view"
+  },
+  {
+    "id": "055",
+    "name": "RIGHT",
+    "displayName": "055_RIGHT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1-8ABgZXob4OL4xA-jb2Xec4UC963aOXY/view"
+  },
+  {
+    "id": "056",
+    "name": "REPT",
+    "displayName": "056_REPT",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/17ScSkxiBYbH0DkXvZHREZrT1dkj61gQH/view"
+  },
+  {
+    "id": "057",
+    "name": "VALUE",
+    "displayName": "057_VALUE",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1X6tY4cgB7hTRY9tcFYlIYisiHMjv0nO2/view"
+  },
+  {
+    "id": "058",
+    "name": "LEN",
+    "displayName": "058_LEN",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1306q0I-vNJ-6BFWyEqa1OO8cjbaCXHWL/view"
+  },
+  {
+    "id": "059",
+    "name": "CONCAT",
+    "displayName": "059_CONCAT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1P-u2yYi6faDaDoRC3zClPLgqNks9otRj/view"
+  },
+  {
+    "id": "060",
+    "name": "LOWER",
+    "displayName": "060_LOWER",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1x1xgG97oBfWqskyOy4oLtPD73lo0szsP/view"
+  },
+  {
+    "id": "061",
+    "name": "PROPER",
+    "displayName": "061_PROPER",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1tDb36qIGwwBqMgq02UClw-XSUMXoVAPf/view"
+  },
+  {
+    "id": "062",
+    "name": "REPLACE",
+    "displayName": "062_REPLACE",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1xeQ-Y0PtWuCa_LZi-_7SJLF2ltBu_jhZ/view"
+  },
+  {
+    "id": "063",
+    "name": "WON",
+    "displayName": "063_WON",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1G-9P3rDAAVZXK9IaXYcYrbTtzstaEXO0/view"
+  },
+  {
+    "id": "064",
+    "name": "RANK.EQ",
+    "displayName": "064_RANK.EQ",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1SNsikzLKR9CVKmUHQE-qBgvS_D5kBYFX/view"
+  },
+  {
+    "id": "065",
+    "name": "AVERAGE",
+    "displayName": "065_AVERAGE",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1zuAr72-zOQXt5Uruzqmdqhjz1FuZUArH/view"
+  },
+  {
+    "id": "066",
+    "name": "LARGE",
+    "displayName": "066_LARGE",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/14FUVLh44QHJ1PdGxcS2aO8R0NpFA9DNB/view"
+  },
+  {
+    "id": "067",
+    "name": "SMALL",
+    "displayName": "067_SMALL",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1L3_sQ54n0UhDoFbjOSxHqNG0Vj_97QQa/view"
+  },
+  {
+    "id": "068",
+    "name": "MEDIAN",
+    "displayName": "068_MEDIAN",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1vc6GnVcZ8MSMITHpZx-RiNnQY8eGJAHD/view"
+  },
+  {
+    "id": "069",
+    "name": "MAX",
+    "displayName": "069_MAX",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1Eww2HcQV5S_WOsY66Zur11mT7c67kOIV/view"
+  },
+  {
+    "id": "070",
+    "name": "MIN",
+    "displayName": "070_MIN",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1XqgfFnGdSZLu0fJGiTaU0Myh92vcwYvk/view"
+  },
+  {
+    "id": "071",
+    "name": "COUNTIF",
+    "displayName": "071_COUNTIF",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1xhX3__taP8621Q-gvqpuZ18VNGcW_CIo/view"
+  },
+  {
+    "id": "072",
+    "name": "COUNTA",
+    "displayName": "072_COUNTA",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1tM6qYe2qcFEJ569238Yb-7OfGf3xYl0W/view"
+  },
+  {
+    "id": "073",
+    "name": "COUNT",
+    "displayName": "073_COUNT",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1CN7hAqfhIXVG6cohILw8ZXRiM3JMytlX/view"
+  },
+  {
+    "id": "074",
+    "name": "COUNTBLANK",
+    "displayName": "074_COUNTBLANK",
+    "level": "하",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1phAFHjt89nUZ6vW9BARgFuygEadOUo8p/view"
+  },
+  {
+    "id": "075",
+    "name": "MODE.SNGL",
+    "displayName": "075_MODE.SNGL",
+    "level": "중",
+    "description": "",
+    "problemUrl": "https://drive.google.com/file/d/1iKv_gnepQZ7tC8cNd6aqfVqshiGGxPXp/view"
+  }
+]
