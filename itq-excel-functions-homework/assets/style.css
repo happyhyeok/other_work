@@ -200,6 +200,37 @@ a:focus-visible {
   font-size: 0.85rem;
 }
 
+.content-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.content-tab {
+  min-height: 42px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.content-tab:hover {
+  background: var(--surface-soft);
+  color: var(--primary-dark);
+}
+
+.content-tab.is-active {
+  background: var(--primary);
+  color: #fff;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -219,9 +250,16 @@ a:focus-visible {
 
 .function-card__top {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   gap: 12px;
+}
+
+.function-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
 }
 
 .function-number {
@@ -237,6 +275,20 @@ a:focus-visible {
   color: var(--primary-dark);
   font-size: 0.85rem;
   font-weight: 800;
+}
+
+.submission-badge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #edf1f6;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.submission-badge.is-submitted {
+  background: #dff4ea;
+  color: var(--success);
 }
 
 .function-card h3 {

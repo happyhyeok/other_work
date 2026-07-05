@@ -7,7 +7,12 @@ const state = {
   functions: [],
   students: [],
   selectedFunction: null,
-  lastFocusedElement: null
+  lastFocusedElement: null,
+  progressByDisplayName: new Map(),
+  progressLoading: false,
+  progressRequestId: 0,
+  activeTab: "problems",
+  autoCloseTimer: null
 };
 
 const elements = {};
@@ -32,6 +37,7 @@ function cacheElements() {
   elements.functionList = document.querySelector("#function-list");
   elements.emptyMessage = document.querySelector("#empty-message");
   elements.functionError = document.querySelector("#function-error");
+  elements.tabButtons = document.querySelectorAll(".content-tab");
   elements.submitBackdrop = document.querySelector("#submit-backdrop");
   elements.submitPanel = document.querySelector("#submit-panel");
   elements.submitClose = document.querySelector("#submit-close");
@@ -47,7 +53,10 @@ function cacheElements() {
 function bindEvents() {
   elements.searchInput.addEventListener("input", applyFilters);
   elements.levelFilter.addEventListener("change", applyFilters);
-  elements.studentSelect.addEventListener("change", clearStudentMessage);
+  elements.studentSelect.addEventListener("change", handleStudentChange);
+  elements.tabButtons.forEach((button) => {
+    button.addEventListener("click", () => setActiveTab(button.dataset.tab));
+  });
   elements.submitClose.addEventListener("click", closeSubmitPanel);
   elements.submitBackdrop.addEventListener("click", (event) => {
     if (event.target === elements.submitBackdrop) {
@@ -127,9 +136,39 @@ function renderStudentOptions() {
   elements.studentSelect.append(fragment);
 }
 
+function handleStudentChange() {
+  clearStudentMessage();
+  state.progressRequestId += 1;
+  state.progressByDisplayName = new Map();
+  state.progressLoading = false;
+  applyFilters();
+
+  const student = getSelectedStudent();
+  if (student) {
+    loadProgressForStudent(student);
+  }
+}
+
+function setActiveTab(tabName) {
+  state.activeTab = tabName === "completed" ? "completed" : "problems";
+
+  elements.tabButtons.forEach((button) => {
+    const isActive = button.dataset.tab === state.activeTab;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-selected", String(isActive));
+  });
+
+  const activeButton = state.activeTab === "completed"
+    ? document.querySelector("#completed-tab")
+    : document.querySelector("#problems-tab");
+  elements.functionList.setAttribute("aria-labelledby", activeButton.id);
+  applyFilters();
+}
+
 function applyFilters() {
   const query = elements.searchInput.value.trim().toLocaleLowerCase("ko");
   const selectedLevel = (elements.levelFilter.value || "전체").trim();
+  const selectedStudent = getSelectedStudent();
 
   const filteredFunctions = state.functions.filter((item) => {
     const searchableText = [
@@ -144,8 +183,14 @@ function applyFilters() {
     const itemLevel = (item.level || "미분류").trim();
     const matchesLevel =
       selectedLevel === "전체" || itemLevel === selectedLevel;
+    const matchesTab =
+      state.activeTab === "problems" ||
+      Boolean(
+        selectedStudent &&
+        state.progressByDisplayName.has(item.displayName)
+      );
 
-    return matchesQuery && matchesLevel;
+    return matchesQuery && matchesLevel && matchesTab;
   });
 
   renderFunctionCards(filteredFunctions);
@@ -161,7 +206,22 @@ function renderFunctionCards(functions) {
 
   elements.functionList.append(fragment);
   elements.emptyMessage.hidden = functions.length !== 0;
-  elements.resultCount.textContent = `총 ${functions.length}개 함수가 표시됩니다.`;
+
+  if (functions.length === 0) {
+    if (state.activeTab === "completed" && !getSelectedStudent()) {
+      elements.emptyMessage.textContent = "이름을 먼저 선택하세요.";
+    } else if (state.activeTab === "completed" && state.progressLoading) {
+      elements.emptyMessage.textContent = "제출현황을 불러오는 중입니다.";
+    } else if (state.activeTab === "completed") {
+      elements.emptyMessage.textContent = "아직 제출 완료한 함수가 없습니다.";
+    } else {
+      elements.emptyMessage.textContent = "검색 조건에 맞는 함수가 없습니다.";
+    }
+  }
+
+  elements.resultCount.textContent = state.activeTab === "completed"
+    ? `제출 완료 함수 ${functions.length}개가 표시됩니다.`
+    : `총 ${functions.length}개 함수가 표시됩니다.`;
 }
 
 function createFunctionCard(item) {
@@ -179,7 +239,19 @@ function createFunctionCard(item) {
   level.className = "level-badge";
   level.textContent = item.level || "미분류";
 
-  top.append(number, level);
+  const progress = state.progressByDisplayName.get(item.displayName);
+  const submitCount = Number(progress?.submitCount) || 0;
+  const submission = document.createElement("span");
+  submission.className = `submission-badge${submitCount > 0 ? " is-submitted" : ""}`;
+  submission.textContent = submitCount > 0
+    ? `제출 ${submitCount}회`
+    : "상태: 미제출";
+
+  const badges = document.createElement("div");
+  badges.className = "function-card__badges";
+  badges.append(level, submission);
+
+  top.append(number, badges);
 
   const title = document.createElement("h3");
   title.textContent = item.name;
@@ -289,6 +361,8 @@ function openSubmitPanel(item, triggerElement) {
 
   state.selectedFunction = item;
   state.lastFocusedElement = triggerElement;
+  window.clearTimeout(state.autoCloseTimer);
+  state.autoCloseTimer = null;
   elements.selectedStudent.textContent = `${student.name} (${student.id})`;
   elements.selectedFunction.textContent = item.displayName;
   elements.submitForm.reset();
@@ -300,6 +374,8 @@ function openSubmitPanel(item, triggerElement) {
 }
 
 function closeSubmitPanel() {
+  window.clearTimeout(state.autoCloseTimer);
+  state.autoCloseTimer = null;
   elements.submitBackdrop.hidden = true;
   document.body.classList.remove("modal-open");
   state.selectedFunction = null;
@@ -351,6 +427,7 @@ async function handleSubmit(event) {
   try {
     const fileBase64 = await fileToBase64(file);
     const payload = {
+      action: "submit",
       studentId: student.id,
       studentName: student.name,
       functionId: selectedFunction.id,
@@ -372,6 +449,16 @@ async function handleSubmit(event) {
 
     setSubmitStatus("제출이 완료되었습니다.", "success");
     showSubmitMessage(resultDetails, "success");
+    const submittedDisplayName = selectedFunction.displayName;
+    state.autoCloseTimer = window.setTimeout(() => {
+      if (
+        !elements.submitBackdrop.hidden &&
+        state.selectedFunction?.displayName === submittedDisplayName
+      ) {
+        closeSubmitPanel();
+      }
+    }, 1200);
+    loadProgressForStudent(student, { showLoading: false });
   } catch (error) {
     setSubmitStatus("제출 실패", "error");
     showSubmitMessage(
@@ -438,6 +525,86 @@ async function submitAssignment(payload) {
   if (!response.ok || !result.ok) {
     throw new Error(
       result.message || `제출 요청에 실패했습니다. HTTP 상태: ${response.status}`
+    );
+  }
+
+  return result;
+}
+
+async function loadProgressForStudent(student, options = {}) {
+  const { showLoading = true } = options;
+  const requestId = ++state.progressRequestId;
+  state.progressLoading = true;
+
+  if (showLoading) {
+    showStudentMessage("제출현황을 불러오는 중입니다.");
+  }
+  applyFilters();
+
+  try {
+    const result = await fetchProgress(student.id);
+
+    if (requestId !== state.progressRequestId) {
+      return;
+    }
+
+    state.progressByDisplayName = new Map(
+      (result.items || [])
+        .filter((item) => item.displayName && Number(item.submitCount) > 0)
+        .map((item) => [item.displayName, item])
+    );
+    clearStudentMessage();
+  } catch (error) {
+    if (requestId !== state.progressRequestId) {
+      return;
+    }
+
+    state.progressByDisplayName = new Map();
+    showStudentMessage(
+      error.message || "제출현황을 불러오지 못했습니다.",
+      "error"
+    );
+  } finally {
+    if (requestId === state.progressRequestId) {
+      state.progressLoading = false;
+      applyFilters();
+    }
+  }
+}
+
+async function fetchProgress(studentId) {
+  let response;
+
+  try {
+    response = await fetch(CONFIG.submitApiUrl.trim(), {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify({
+        action: "getProgress",
+        studentId
+      })
+    });
+  } catch (error) {
+    throw new Error(`제출현황 서버에 연결하지 못했습니다. (${error.message})`);
+  }
+
+  const responseText = await response.text();
+  let result;
+
+  try {
+    result = JSON.parse(responseText);
+  } catch (error) {
+    throw new Error(
+      `제출현황 응답을 확인할 수 없습니다. HTTP 상태: ${response.status}`
+    );
+  }
+
+  if (!response.ok || !result.ok) {
+    throw new Error(
+      result.message ||
+      `제출현황 요청에 실패했습니다. HTTP 상태: ${response.status}`
     );
   }
 

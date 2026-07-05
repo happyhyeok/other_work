@@ -73,8 +73,33 @@
         </div>
       </div>
 
-      <div id="function-list" class="card-grid" aria-busy="true"></div>
-      <p id="empty-message" class="empty-message" hidden>검색 조건에 맞는 함수가 없습니다.</p>
+      <div class="content-tabs" role="tablist" aria-label="함수 목록 구분">
+        <button
+          id="problems-tab"
+          class="content-tab is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-tab="problems"
+        >문제</button>
+        <button
+          id="completed-tab"
+          class="content-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-tab="completed"
+        >제출 완료</button>
+      </div>
+
+      <div
+        id="function-list"
+        class="card-grid"
+        role="tabpanel"
+        aria-labelledby="problems-tab"
+        aria-busy="true"
+      ></div>
+      <p id="empty-message" class="empty-message" hidden></p>
       <p id="function-error" class="error-message" role="alert" hidden>
         함수 목록을 불러오지 못했습니다.
       </p>
