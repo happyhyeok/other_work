@@ -1,5 +1,5 @@
 const CONFIG = {
-  submitApiUrl: "APPS_SCRIPT_WEB_APP_URL_HERE",
+  submitApiUrl: "https://script.google.com/macros/s/AKfycbxNQvBuKwAFzZi6r_TmzIniUn9i3gBxdYBovk-upZ5SgrD5mZ27xNksG8AiD6n6cpfx0A/exec",
   pageTitle: "ITQ 엑셀 함수 75제 온라인 숙제장"
 };
 
