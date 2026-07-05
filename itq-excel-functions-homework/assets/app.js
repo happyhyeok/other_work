@@ -136,7 +136,8 @@ function applyFilters() {
       item.id,
       item.name,
       item.displayName,
-      item.description || ""
+      item.description || "",
+      item.page ?? ""
     ].join(" ").toLocaleLowerCase("ko");
 
     const matchesQuery = !query || searchableText.includes(query);
@@ -189,18 +190,26 @@ function createFunctionCard(item) {
 
   const description = document.createElement("p");
   description.className = "description";
-  description.textContent = item.description || "간단설명이 아직 등록되지 않았습니다.";
+  description.textContent = item.description
+    ? `내용: ${item.description}`
+    : "내용이 아직 등록되지 않았습니다.";
+
+  const page = document.createElement("p");
+  page.className = "page-reference";
+  page.textContent = item.page
+    ? `교재: ${item.page}쪽`
+    : "교재 페이지가 아직 등록되지 않았습니다.";
 
   const actions = document.createElement("div");
   actions.className = "card-actions";
 
   const problemLink = document.createElement("a");
   problemLink.className = "button button--problem";
-  problemLink.href = item.problemUrl;
+  problemLink.href = getDriveDownloadUrl(item.problemUrl);
   problemLink.target = "_blank";
   problemLink.rel = "noopener noreferrer";
-  problemLink.textContent = "문제 파일 열기";
-  problemLink.setAttribute("aria-label", `${item.displayName} 문제 파일 새 창에서 열기`);
+  problemLink.textContent = "문제 파일 다운로드";
+  problemLink.setAttribute("aria-label", `${item.displayName} 문제 파일 다운로드`);
 
   const copyButton = document.createElement("button");
   copyButton.className = "button button--copy";
@@ -215,9 +224,15 @@ function createFunctionCard(item) {
   submitOpenButton.addEventListener("click", () => openSubmitPanel(item, submitOpenButton));
 
   actions.append(problemLink, copyButton, submitOpenButton);
-  article.append(top, title, displayName, description, actions);
+  article.append(top, title, displayName, description, page, actions);
 
   return article;
+}
+
+function getDriveDownloadUrl(url) {
+  const match = String(url).match(/\/file\/d\/([^/]+)\//);
+  if (!match) return url;
+  return `https://drive.google.com/uc?export=download&id=${match[1]}`;
 }
 
 async function copyAiPrompt(item) {

@@ -4,7 +4,8 @@
     "name": "YEAR",
     "displayName": "001_YEAR",
     "level": "하",
-    "description": "",
+    "description": "날짜에서 연도만 추출하기",
+    "page": 4,
     "problemUrl": "https://drive.google.com/file/d/1lZN7yHCcmiRE65D8vk8MwsUEQbxHPtDJ/view"
   },
   {
@@ -12,7 +13,8 @@
     "name": "DAY",
     "displayName": "002_DAY",
     "level": "하",
-    "description": "",
+    "description": "날짜에서 일만 추출하기",
+    "page": 5,
     "problemUrl": "https://drive.google.com/file/d/1kjYOiFxW5gRqwPZXXCP4KsJIRIFXMSwy/view"
   },
   {
@@ -20,7 +22,8 @@
     "name": "MONTH",
     "displayName": "003_MONTH",
     "level": "하",
-    "description": "",
+    "description": "날짜에서 월만 추출하기",
+    "page": 6,
     "problemUrl": "https://drive.google.com/file/d/1qNqUE-LobhzFoRlMmt2FrjI77rmkZmQx/view"
   },
   {
@@ -28,7 +31,8 @@
     "name": "TODAY",
     "displayName": "004_TODAY",
     "level": "하",
-    "description": "",
+    "description": "현재 날짜 표시하기",
+    "page": 7,
     "problemUrl": "https://drive.google.com/file/d/1rou-ZfLn39mq-eTJYkOKYIjCeZqYnaGK/view"
   },
   {
@@ -36,7 +40,8 @@
     "name": "DATE",
     "displayName": "005_DATE",
     "level": "중",
-    "description": "",
+    "description": "날짜의 일련번호 구하기",
+    "page": 8,
     "problemUrl": "https://drive.google.com/file/d/1r-fyLyXezQX4mx_wp5ztlD6V3_OxAraQ/view"
   },
   {
@@ -44,7 +49,8 @@
     "name": "WEEKDAY",
     "displayName": "006_WEEKDAY",
     "level": "중",
-    "description": "",
+    "description": "날짜에서 요일 알아내기",
+    "page": 9,
     "problemUrl": "https://drive.google.com/file/d/1kAr8CFKlZOVlqZgi51LPV8GWoFhxZkWj/view"
   },
   {
@@ -52,7 +58,8 @@
     "name": "HOUR",
     "displayName": "007_HOUR",
     "level": "하",
-    "description": "",
+    "description": "시간에서 시만 추출하기",
+    "page": 10,
     "problemUrl": "https://drive.google.com/file/d/18iRCmR3D_2EKM10Bap7jtxvdF6dF9U2s/view"
   },
   {
@@ -60,7 +67,8 @@
     "name": "MINUTE",
     "displayName": "008_MINUTE",
     "level": "하",
-    "description": "",
+    "description": "시간에서 분만 추출하기",
+    "page": 11,
     "problemUrl": "https://drive.google.com/file/d/1tpQQAKhJfgQyHTUNXjUygYQiMfbFwq4l/view"
   },
   {
@@ -68,7 +76,8 @@
     "name": "SECOND",
     "displayName": "009_SECOND",
     "level": "하",
-    "description": "",
+    "description": "시간에서 초만 추출하기",
+    "page": 12,
     "problemUrl": "https://drive.google.com/file/d/1_x5_hLc8Z7ICX8tejRlHDKkrikfhYt-O/view"
   },
   {
@@ -76,7 +85,8 @@
     "name": "TIME",
     "displayName": "010_TIME",
     "level": "중",
-    "description": "",
+    "description": "시간의 일련번호 계산하기",
+    "page": 12,
     "problemUrl": "https://drive.google.com/file/d/1H-KLJuT1_xv81dLQSUogG4vLf7dLikox/view"
   },
   {
@@ -84,7 +94,8 @@
     "name": "NOW",
     "displayName": "011_NOW",
     "level": "하",
-    "description": "",
+    "description": "현재 날짜와 시간 표시하기",
+    "page": 13,
     "problemUrl": "https://drive.google.com/file/d/1sApPwxRXJAOkHUY69ZpoQ5vKUx92Dq_J/view"
   },
   {
@@ -92,7 +103,8 @@
     "name": "IF",
     "displayName": "012_IF",
     "level": "중",
-    "description": "",
+    "description": "1월 실적이 평균 이상이면 우수, 평균 미만이면 미달 표시하기",
+    "page": 13,
     "problemUrl": "https://drive.google.com/file/d/1wFgc6YaVf85agPCtJw2N42p_nCQtj3ot/view"
   },
   {
@@ -100,7 +112,8 @@
     "name": "AND",
     "displayName": "013_AND",
     "level": "중",
-    "description": "",
+    "description": "모두 참(TRUE)일 때 참(TRUE) 반환하기",
+    "page": 15,
     "problemUrl": "https://drive.google.com/file/d/1UQ3Szpoatw-cd2Ynq1jKmSedyaPM-HWU/view"
   },
   {
@@ -108,7 +121,8 @@
     "name": "OR",
     "displayName": "014_OR",
     "level": "중",
-    "description": "",
+    "description": "하나만 참(TRUE)이면 참(TRUE) 반환하기",
+    "page": 16,
     "problemUrl": "https://drive.google.com/file/d/1foUtRFkHFmKBljssbwK7HvQI6bla_DnR/view"
   },
   {
@@ -116,7 +130,8 @@
     "name": "NOT",
     "displayName": "015_NOT",
     "level": "중",
-    "description": "",
+    "description": "논리식의 결과 부정하기",
+    "page": 17,
     "problemUrl": "https://drive.google.com/file/d/1UWky7klEoB6tOw269Y5uQfinaAuyGcWm/view"
   },
   {
@@ -124,7 +139,8 @@
     "name": "TRUE",
     "displayName": "016_TRUE",
     "level": "하",
-    "description": "",
+    "description": "논리값을 참(TRUE)으로 표시하기",
+    "page": 17,
     "problemUrl": "https://drive.google.com/file/d/1_v8pXsK0rd1ULdSMk_U0Kz0Ydxv0M6wz/view"
   },
   {
@@ -132,7 +148,8 @@
     "name": "FALSE",
     "displayName": "017_FALSE",
     "level": "하",
-    "description": "",
+    "description": "논리값을 거짓(FALSE)으로 표시하기",
+    "page": 17,
     "problemUrl": "https://drive.google.com/file/d/1m8LiPZNJHg9Y6tJUILlEomSyzNcAily4/view"
   },
   {
@@ -140,7 +157,8 @@
     "name": "DCOUNTA",
     "displayName": "018_DCOUNTA",
     "level": "상",
-    "description": "",
+    "description": "과일의 주문 건수 계산하기",
+    "page": 18,
     "problemUrl": "https://drive.google.com/file/d/11teuXIyIxA7cZo4HiMc4Do8EeexVgNQr/view"
   },
   {
@@ -148,7 +166,8 @@
     "name": "DAVERAGE",
     "displayName": "019_DAVERAGE",
     "level": "상",
-    "description": "",
+    "description": "과일의 평균 판매 금액 계산하기",
+    "page": 19,
     "problemUrl": "https://drive.google.com/file/d/1A7kPlAfwGXnsdjZVPsYOkbgRvWSpi-ml/view"
   },
   {
@@ -156,7 +175,8 @@
     "name": "DSUM",
     "displayName": "020_DSUM",
     "level": "상",
-    "description": "",
+    "description": "과일의 판매 수량 합계 계산하기",
+    "page": 20,
     "problemUrl": "https://drive.google.com/file/d/1IorPkIGpivAcC91F0D2AOrs3EkeFUPXQ/view"
   },
   {
@@ -164,7 +184,8 @@
     "name": "DMIN",
     "displayName": "021_DMIN",
     "level": "상",
-    "description": "",
+    "description": "가장 적게 팔린 과일의 금액 찾기",
+    "page": 21,
     "problemUrl": "https://drive.google.com/file/d/1_0k73vf3YE0lIs2gVKEjREKwToXNCTQJ/view"
   },
   {
@@ -172,7 +193,8 @@
     "name": "DMAX",
     "displayName": "022_DMAX",
     "level": "상",
-    "description": "",
+    "description": "가장 많이 팔린 과일의 금액 찾기",
+    "page": 22,
     "problemUrl": "https://drive.google.com/file/d/1xOezSUr1ynMQyuFGZEZgJsjVdSW3wqAX/view"
   },
   {
@@ -180,7 +202,8 @@
     "name": "DCOUNT",
     "displayName": "023_DCOUNT",
     "level": "상",
-    "description": "",
+    "description": "과일의 판매 건수 계산하기",
+    "page": 23,
     "problemUrl": "https://drive.google.com/file/d/10TwOBi2gGBRZnEXBHQSKsKZpm9rWr69y/view"
   },
   {
@@ -188,7 +211,8 @@
     "name": "DGET",
     "displayName": "024_DGET",
     "level": "상",
-    "description": "",
+    "description": "유일한 값 찾아내기",
+    "page": 24,
     "problemUrl": "https://drive.google.com/file/d/1d2FW8_D5f0MCTR-xYn86byvClkXDGsZu/view"
   },
   {
@@ -196,7 +220,8 @@
     "name": "DPRODUCT",
     "displayName": "025_DPRODUCT",
     "level": "상",
-    "description": "",
+    "description": "품목의 판매량에 대한 곱 계산하기",
+    "page": 25,
     "problemUrl": "https://drive.google.com/file/d/1vC6opIlR6Av4BvhNxD6LuZjM8-8fzvlD/view"
   },
   {
@@ -204,7 +229,8 @@
     "name": "DSTDEV",
     "displayName": "026_DSTDEV",
     "level": "상",
-    "description": "",
+    "description": "품목의 판매량에 대한 표준편차 계산하기",
+    "page": 25,
     "problemUrl": "https://drive.google.com/file/d/1rRfLFigjqn9RhknpK6yheNYAhFRLdDzc/view"
   },
   {
@@ -212,7 +238,8 @@
     "name": "DVAR",
     "displayName": "027_DVAR",
     "level": "상",
-    "description": "",
+    "description": "품목의 판매량에 대한 분산 계산하기",
+    "page": 26,
     "problemUrl": "https://drive.google.com/file/d/1-4tDl-skuI-hOB8l5QmN3-BauvFNC7jA/view"
   },
   {
@@ -220,7 +247,8 @@
     "name": "SUMIF",
     "displayName": "028_SUMIF",
     "level": "중",
-    "description": "",
+    "description": "조건에 맞는 품목의 합계만 구하기",
+    "page": 27,
     "problemUrl": "https://drive.google.com/file/d/1tLiEns4BRs4vC6EjaqVsOl-ZppphopAA/view"
   },
   {
@@ -228,7 +256,8 @@
     "name": "SUMPRODUCT",
     "displayName": "029_SUMPRODUCT",
     "level": "상",
-    "description": "",
+    "description": "곱한 값들의 합계 구하기",
+    "page": 28,
     "problemUrl": "https://drive.google.com/file/d/1WKm9Dc89SCKHeGoABtRhOxC3iRTvECfo/view"
   },
   {
@@ -236,7 +265,8 @@
     "name": "SUM",
     "displayName": "030_SUM",
     "level": "하",
-    "description": "",
+    "description": "합계 구하기",
+    "page": 29,
     "problemUrl": "https://drive.google.com/file/d/1t5Mn3ghh6RyTGifGvgUyTzeAROEI5LJm/view"
   },
   {
@@ -244,7 +274,8 @@
     "name": "INT",
     "displayName": "031_INT",
     "level": "하",
-    "description": "",
+    "description": "실수를 정수로 변경하기",
+    "page": 30,
     "problemUrl": "https://drive.google.com/file/d/1Q9RKumsZKVaeh5JlYzlNXJF6zLqkAu7N/view"
   },
   {
@@ -252,7 +283,8 @@
     "name": "MOD",
     "displayName": "032_MOD",
     "level": "중",
-    "description": "",
+    "description": "나머지 계산하기",
+    "page": 31,
     "problemUrl": "https://drive.google.com/file/d/1lyWKJf4Kgz50K--CQDr5iRRPZcB1KVd1/view"
   },
   {
@@ -260,7 +292,8 @@
     "name": "ROUNDDOWN",
     "displayName": "033_ROUNDDOWN",
     "level": "하",
-    "description": "",
+    "description": "자리내림하기",
+    "page": 32,
     "problemUrl": "https://drive.google.com/file/d/1KEh8-XOI82VfVQNqjA3uVxrQ7-b-sAQ6/view"
   },
   {
@@ -268,7 +301,8 @@
     "name": "ROUND",
     "displayName": "034_ROUND",
     "level": "하",
-    "description": "",
+    "description": "반올림하기",
+    "page": 33,
     "problemUrl": "https://drive.google.com/file/d/1z-wbd6Vgn6CR4IsBPs1pgoukSow2QmAj/view"
   },
   {
@@ -276,7 +310,8 @@
     "name": "ROUNDUP",
     "displayName": "035_ROUNDUP",
     "level": "하",
-    "description": "",
+    "description": "1에 가까운 방향으로 자리올림하기",
+    "page": 34,
     "problemUrl": "https://drive.google.com/file/d/1lZ-7ZKROVzlRNcJsoONWoObEBQm-l70W/view"
   },
   {
@@ -284,7 +319,8 @@
     "name": "PRODUCT",
     "displayName": "036_PRODUCT",
     "level": "하",
-    "description": "",
+    "description": "숫자 모두 곱하기",
+    "page": 35,
     "problemUrl": "https://drive.google.com/file/d/1ndvc0gQe98An6dJlLZ8q5JVJpVfpQCQD/view"
   },
   {
@@ -292,7 +328,8 @@
     "name": "ABS",
     "displayName": "037_ABS",
     "level": "하",
-    "description": "",
+    "description": "절댓값 계산하기",
+    "page": 36,
     "problemUrl": "https://drive.google.com/file/d/18V_oLATiDlWVgBSHJVUpkEkt8DdaPZ2t/view"
   },
   {
@@ -300,7 +337,8 @@
     "name": "PI",
     "displayName": "038_PI",
     "level": "하",
-    "description": "",
+    "description": "원의 둘레 구하기",
+    "page": 36,
     "problemUrl": "https://drive.google.com/file/d/1lqYSeQXzKOODS1iv884BlQptr36S6H8K/view"
   },
   {
@@ -308,7 +346,8 @@
     "name": "POWER",
     "displayName": "039_POWER",
     "level": "중",
-    "description": "",
+    "description": "거듭제곱 계산하기",
+    "page": 36,
     "problemUrl": "https://drive.google.com/file/d/1B9DJ-Mcn9jFEauH9CPvkpvCzjtYOrAKz/view"
   },
   {
@@ -316,7 +355,8 @@
     "name": "TRUNC",
     "displayName": "040_TRUNC",
     "level": "중",
-    "description": "",
+    "description": "소수 이하 잘라내기",
+    "page": 37,
     "problemUrl": "https://drive.google.com/file/d/1uMLtEiWiQhN1fXoRhl_G8Fwv1x0nwwdl/view"
   },
   {
@@ -324,7 +364,8 @@
     "name": "CEILING.MATH",
     "displayName": "041_CEILING.MATH",
     "level": "중",
-    "description": "",
+    "description": "가장 가까운 배수 구하기",
+    "page": 38,
     "problemUrl": "https://drive.google.com/file/d/1CSPjaT9hLfMfTcmKdnKsvaVnW78ZNwwv/view"
   },
   {
@@ -332,7 +373,8 @@
     "name": "ODD",
     "displayName": "042_ODD",
     "level": "중",
-    "description": "",
+    "description": "가장 가까운 홀수 구하기",
+    "page": 38,
     "problemUrl": "https://drive.google.com/file/d/1dnv9nh53VrHIa5cFnf4JY1QrXc_tPjUo/view"
   },
   {
@@ -340,7 +382,8 @@
     "name": "ISERROR",
     "displayName": "043_ISERROR",
     "level": "중",
-    "description": "",
+    "description": "오류가 있는 셀 판별하기",
+    "page": 39,
     "problemUrl": "https://drive.google.com/file/d/10m5tfHbxF95au_nQxGON6fv5ZkI6yPQk/view"
   },
   {
@@ -348,7 +391,8 @@
     "name": "INDEX",
     "displayName": "044_INDEX",
     "level": "상",
-    "description": "",
+    "description": "직급별, 호봉별 급여 기준액 계산하기",
+    "page": 40,
     "problemUrl": "https://drive.google.com/file/d/1zdWzwIJYF0rnfaddul7jedHNGg1I6Lq2/view"
   },
   {
@@ -356,7 +400,8 @@
     "name": "MATCH",
     "displayName": "045_MATCH",
     "level": "상",
-    "description": "",
+    "description": "자료가 기록된 위치 찾기",
+    "page": 42,
     "problemUrl": "https://drive.google.com/file/d/1sYEquQvbGvD8uK-D38CBU0uYOF2fBkIb/view"
   },
   {
@@ -364,7 +409,8 @@
     "name": "CHOOSE",
     "displayName": "046_CHOOSE",
     "level": "중",
-    "description": "",
+    "description": "요일 번호로 요일 표시하기",
+    "page": 43,
     "problemUrl": "https://drive.google.com/file/d/15hDWFNDsSKbOCoOEQghtiNvDf2pZIKeS/view"
   },
   {
@@ -372,7 +418,8 @@
     "name": "VLOOKUP",
     "displayName": "047_VLOOKUP",
     "level": "상",
-    "description": "",
+    "description": "직위별 상여금 계산하기",
+    "page": 44,
     "problemUrl": "https://drive.google.com/file/d/1H6SgZ5Tc934TTdtP-mBNyy35Q3_yWhgA/view"
   },
   {
@@ -380,7 +427,8 @@
     "name": "LOOKUP",
     "displayName": "048_LOOKUP",
     "level": "상",
-    "description": "",
+    "description": "직위별 초과 수당 계산하기",
+    "page": 45,
     "problemUrl": "https://drive.google.com/file/d/1cNuggpBqgC8fm3ItekF6GHQeZraI4478/view"
   },
   {
@@ -388,7 +436,8 @@
     "name": "HLOOKUP",
     "displayName": "049_HLOOKUP",
     "level": "상",
-    "description": "",
+    "description": "직위별 상여금 계산하기",
+    "page": 46,
     "problemUrl": "https://drive.google.com/file/d/155xlXSzLvSePo_q72uKmxKsd4quQo-bj/view"
   },
   {
@@ -396,7 +445,8 @@
     "name": "OFFSET",
     "displayName": "050_OFFSET",
     "level": "상",
-    "description": "",
+    "description": "3칸 아래, 2칸 오른쪽에 있는 자료 찾기",
+    "page": 46,
     "problemUrl": "https://drive.google.com/file/d/1rn6zGf_2vfFsWvbRI68cIBmSCCMbRCwi/view"
   },
   {
@@ -404,7 +454,8 @@
     "name": "TRANSPOSE",
     "displayName": "051_TRANSPOSE",
     "level": "상",
-    "description": "",
+    "description": "행과 열을 바꿔서 표시하기",
+    "page": 47,
     "problemUrl": "https://drive.google.com/file/d/14YpKV2q8nxZ-GL2ShzOKaq7K83SccUGx/view"
   },
   {
@@ -412,7 +463,8 @@
     "name": "ADDRESS",
     "displayName": "052_ADDRESS",
     "level": "상",
-    "description": "",
+    "description": "행 번호와 열 번호를 셀 주소로 변환하기",
+    "page": 47,
     "problemUrl": "https://drive.google.com/file/d/1XHbqgQd6ZldjKtL10yFjOls4TIWBmo-u/view"
   },
   {
@@ -420,7 +472,8 @@
     "name": "MID",
     "displayName": "053_MID",
     "level": "중",
-    "description": "",
+    "description": "시작 위치부터 지정한 수만큼 추출하기",
+    "page": 48,
     "problemUrl": "https://drive.google.com/file/d/1YSisO7q4Kw0ktJNeQ3iNOaJEItZDSHgy/view"
   },
   {
@@ -428,7 +481,8 @@
     "name": "LEFT",
     "displayName": "054_LEFT",
     "level": "하",
-    "description": "",
+    "description": "왼쪽에서 지정한 수만큼 추출하기",
+    "page": 49,
     "problemUrl": "https://drive.google.com/file/d/1H6GMGC3fJ3YOYsGLNxhr290Hp1kraU6d/view"
   },
   {
@@ -436,7 +490,8 @@
     "name": "RIGHT",
     "displayName": "055_RIGHT",
     "level": "하",
-    "description": "",
+    "description": "오른쪽에서 지정한 수만큼 추출하기",
+    "page": 50,
     "problemUrl": "https://drive.google.com/file/d/1-8ABgZXob4OL4xA-jb2Xec4UC963aOXY/view"
   },
   {
@@ -444,7 +499,8 @@
     "name": "REPT",
     "displayName": "056_REPT",
     "level": "중",
-    "description": "",
+    "description": "문자열 반복해서 표시하기",
+    "page": 51,
     "problemUrl": "https://drive.google.com/file/d/17ScSkxiBYbH0DkXvZHREZrT1dkj61gQH/view"
   },
   {
@@ -452,7 +508,8 @@
     "name": "VALUE",
     "displayName": "057_VALUE",
     "level": "하",
-    "description": "",
+    "description": "문자를 숫자로 변환하기",
+    "page": 52,
     "problemUrl": "https://drive.google.com/file/d/1X6tY4cgB7hTRY9tcFYlIYisiHMjv0nO2/view"
   },
   {
@@ -460,7 +517,8 @@
     "name": "LEN",
     "displayName": "058_LEN",
     "level": "하",
-    "description": "",
+    "description": "문자열의 길이 알아내기",
+    "page": 53,
     "problemUrl": "https://drive.google.com/file/d/1306q0I-vNJ-6BFWyEqa1OO8cjbaCXHWL/view"
   },
   {
@@ -468,7 +526,8 @@
     "name": "CONCAT",
     "displayName": "059_CONCAT",
     "level": "하",
-    "description": "",
+    "description": "문자열 연결하기",
+    "page": 54,
     "problemUrl": "https://drive.google.com/file/d/1P-u2yYi6faDaDoRC3zClPLgqNks9otRj/view"
   },
   {
@@ -476,7 +535,8 @@
     "name": "LOWER",
     "displayName": "060_LOWER",
     "level": "하",
-    "description": "",
+    "description": "대문자를 소문자로 변환하기",
+    "page": 55,
     "problemUrl": "https://drive.google.com/file/d/1x1xgG97oBfWqskyOy4oLtPD73lo0szsP/view"
   },
   {
@@ -484,7 +544,8 @@
     "name": "PROPER",
     "displayName": "061_PROPER",
     "level": "하",
-    "description": "",
+    "description": "대·소문자 알맞게 변환하기",
+    "page": 55,
     "problemUrl": "https://drive.google.com/file/d/1tDb36qIGwwBqMgq02UClw-XSUMXoVAPf/view"
   },
   {
@@ -492,7 +553,8 @@
     "name": "REPLACE",
     "displayName": "062_REPLACE",
     "level": "중",
-    "description": "",
+    "description": "문자열 치환하기",
+    "page": 56,
     "problemUrl": "https://drive.google.com/file/d/1xeQ-Y0PtWuCa_LZi-_7SJLF2ltBu_jhZ/view"
   },
   {
@@ -500,7 +562,8 @@
     "name": "WON",
     "displayName": "063_WON",
     "level": "하",
-    "description": "",
+    "description": "통화 기호 표시하기",
+    "page": 56,
     "problemUrl": "https://drive.google.com/file/d/1G-9P3rDAAVZXK9IaXYcYrbTtzstaEXO0/view"
   },
   {
@@ -508,7 +571,8 @@
     "name": "RANK.EQ",
     "displayName": "064_RANK.EQ",
     "level": "중",
-    "description": "",
+    "description": "순위 계산하기",
+    "page": 57,
     "problemUrl": "https://drive.google.com/file/d/1SNsikzLKR9CVKmUHQE-qBgvS_D5kBYFX/view"
   },
   {
@@ -516,7 +580,8 @@
     "name": "AVERAGE",
     "displayName": "065_AVERAGE",
     "level": "하",
-    "description": "",
+    "description": "평균 계산하기",
+    "page": 58,
     "problemUrl": "https://drive.google.com/file/d/1zuAr72-zOQXt5Uruzqmdqhjz1FuZUArH/view"
   },
   {
@@ -524,7 +589,8 @@
     "name": "LARGE",
     "displayName": "066_LARGE",
     "level": "중",
-    "description": "",
+    "description": "N번째로 큰 수 찾기",
+    "page": 59,
     "problemUrl": "https://drive.google.com/file/d/14FUVLh44QHJ1PdGxcS2aO8R0NpFA9DNB/view"
   },
   {
@@ -532,7 +598,8 @@
     "name": "SMALL",
     "displayName": "067_SMALL",
     "level": "중",
-    "description": "",
+    "description": "N번째로 작은 수 찾기",
+    "page": 60,
     "problemUrl": "https://drive.google.com/file/d/1L3_sQ54n0UhDoFbjOSxHqNG0Vj_97QQa/view"
   },
   {
@@ -540,7 +607,8 @@
     "name": "MEDIAN",
     "displayName": "068_MEDIAN",
     "level": "중",
-    "description": "",
+    "description": "중간에 위치한 값 찾아내기",
+    "page": 61,
     "problemUrl": "https://drive.google.com/file/d/1vc6GnVcZ8MSMITHpZx-RiNnQY8eGJAHD/view"
   },
   {
@@ -548,7 +616,8 @@
     "name": "MAX",
     "displayName": "069_MAX",
     "level": "하",
-    "description": "",
+    "description": "가장 큰 수 찾기",
+    "page": 62,
     "problemUrl": "https://drive.google.com/file/d/1Eww2HcQV5S_WOsY66Zur11mT7c67kOIV/view"
   },
   {
@@ -556,7 +625,8 @@
     "name": "MIN",
     "displayName": "070_MIN",
     "level": "하",
-    "description": "",
+    "description": "가장 작은 수 찾기",
+    "page": 63,
     "problemUrl": "https://drive.google.com/file/d/1XqgfFnGdSZLu0fJGiTaU0Myh92vcwYvk/view"
   },
   {
@@ -564,7 +634,8 @@
     "name": "COUNTIF",
     "displayName": "071_COUNTIF",
     "level": "중",
-    "description": "",
+    "description": "판매 품목의 판매 건수 구하기",
+    "page": 64,
     "problemUrl": "https://drive.google.com/file/d/1xhX3__taP8621Q-gvqpuZ18VNGcW_CIo/view"
   },
   {
@@ -572,7 +643,8 @@
     "name": "COUNTA",
     "displayName": "072_COUNTA",
     "level": "하",
-    "description": "",
+    "description": "자료가 입력되어 있는 모든 셀의 개수 세기",
+    "page": 65,
     "problemUrl": "https://drive.google.com/file/d/1tM6qYe2qcFEJ569238Yb-7OfGf3xYl0W/view"
   },
   {
@@ -580,7 +652,8 @@
     "name": "COUNT",
     "displayName": "073_COUNT",
     "level": "하",
-    "description": "",
+    "description": "숫자가 들어 있는 셀의 개수 세기",
+    "page": 66,
     "problemUrl": "https://drive.google.com/file/d/1CN7hAqfhIXVG6cohILw8ZXRiM3JMytlX/view"
   },
   {
@@ -588,7 +661,8 @@
     "name": "COUNTBLANK",
     "displayName": "074_COUNTBLANK",
     "level": "하",
-    "description": "",
+    "description": "자료가 없는 셀의 개수 세기",
+    "page": 67,
     "problemUrl": "https://drive.google.com/file/d/1phAFHjt89nUZ6vW9BARgFuygEadOUo8p/view"
   },
   {
@@ -596,7 +670,8 @@
     "name": "MODE.SNGL",
     "displayName": "075_MODE.SNGL",
     "level": "중",
-    "description": "",
+    "description": "가장 많이 나오는 수(최빈수) 찾아내기",
+    "page": 68,
     "problemUrl": "https://drive.google.com/file/d/1iKv_gnepQZ7tC8cNd6aqfVqshiGGxPXp/view"
   }
 ]

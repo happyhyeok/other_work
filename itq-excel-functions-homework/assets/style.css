@@ -254,10 +254,16 @@ a:focus-visible {
 }
 
 .description {
-  flex: 1;
-  min-height: 3.3em;
-  margin: 14px 0 20px;
+  margin: 14px 0 6px;
   color: var(--muted);
+  line-height: 1.55;
+}
+
+.page-reference {
+  flex: 1;
+  margin: 0 0 20px;
+  color: var(--primary-dark);
+  font-weight: 700;
 }
 
 .card-actions {
